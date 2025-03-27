@@ -1,0 +1,157 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #57ba54;
+    color: #333;
+}
+
+/* Header */
+.header {
+    background: #5cacee;
+    background-color: #5cacee; /* Change as needed */
+    position: relative;
+    height: 150px;
+    
+    
+}
+
+/* Logo */
+.col-md-6_logo img {
+    max-width: 150px; /* Adjust the max-width of the logo as needed */
+    height: auto;
+}
+
+/* Left and Right Placeholders */
+.left-placeholder, .right-placeholder {
+    width: 50px; /* Adjust the width as needed */
+    height: 50px; /* Adjust the height as needed */
+    background-color: #f1f1f1; /* Light gray color for visibility */
+    margin: 0 15px; /* Space between the logo and the placeholders */
+    border-radius: 5px; /* Optional: add rounded corners */
+}
+
+/* Navbar */
+.navigation {
+    background: #57ba54;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 12px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Left Navigation Items */
+.navbar-nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-nav-left .nav-item .nav-link {
+    font-weight: 500;
+    color: #007bff;
+    padding: 10px 20px;
+    transition: 0.3s;
+}
+
+.navbar-nav-left .nav-item .nav-link:hover {
+    color: #0056b3;
+}
+
+/* Right Navigation Items */
+.navbar-nav-right {
+    display: flex;
+    align-items: center;
+}
+
+/* Dropdown Menu Styles */
+.navbar-nav .nav-item.dropdown {
+    position: relative;
+}
+
+/* Show dropdown on hover */
+.navbar-nav .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out; /* Smooth transition */
+}
+/* Make Gallery, ABC, XYZ links have the same font as other navbar links */
+.navbar-nav-right .nav-item .nav-link {
+    font-weight: 500;
+    color: #007bff;
+    padding: 10px 20px;
+    transition: 0.3s;
+}
+
+.navbar-nav-right .nav-item .nav-link:hover {
+    color: #0056b3;
+}
+
+.navbar-nav .nav-item .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #57ba54;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 10px 0;
+    z-index: 1000;
+    min-width: 160px;
+}
+
+.navbar-nav .nav-item .dropdown-menu .dropdown-item {
+    padding: 8px 20px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 400;
+    transition: 0.3s;
+}
+
+.navbar-nav .nav-item .dropdown-menu .dropdown-item:hover {
+    background-color: #57ba54;
+    color: #b8291f;
+}
+
+/* Main Content */
+.main-content {
+    padding: 60px 0;
+}
+
+.mission, .quality {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.mission h2, .quality h2 {
+    color: #007bff;
+}
+
+/* Footer */
+.footer {
+    background: #f1f1f1;
+    color: #333;
+    padding: 30px 0;
+    border-radius: 15px 15px 0 0;
+}
+
+.footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #0056b3;
+}
+
+.copyright {
+    background: #222;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
