@@ -12,118 +12,58 @@
 <body>
 
 <!-- Header -->
-<div class="container-fluid header">
-    <div class="row align-items-center">
-        <div class="col-md-6 col-md-6_logo">
-            <!-- Logo -->
-            <a href="home.html"><img src="Images\global.png" alt="Global Logo"></a>
-        </div>
-        <div class="col-md-6 text-right">
-            <!-- Text to the right of the logo -->
-            <h1 class="header-text"></h1>
-        </div>
-    </div>
+<div class="container-fluid header text-center py-3">
+    <a href="home.html"><img src="Images/global.png" alt="Global Logo"></a>
 </div>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light navigation">
-    <div class="container">
-        <!-- Left Navigation Items -->
-        <div class="navbar-nav-left">
-            <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-
-                <!-- Dropdown Menu -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Services
+<!-- Products Section with Dropdowns -->
+<div class="container my-4">
+    <div class="accordion" id="productAccordion">
+        
+        <!-- Category 1 -->
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne">
+                        Category 1
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseOne" class="collapse" data-parent="#productAccordion">
+                <div class="card-body d-flex flex-wrap">
+                    <a href="Images/PRODUCTS/1.jpg" target="_blank">
+                        <img src="Images/PRODUCTS/1.jpg" alt="Product 1" class="img-thumbnail m-2" width="150">
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Service 1</a>
-                        <a class="dropdown-item" href="#">Service 2</a>
-                        <a class="dropdown-item" href="#">Service 3</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-
-        <!-- Right Navigation Items -->
-        <div class="navbar-nav-right ml-auto">
-            <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-                <li class="nav-item"><a class="nav-link" href="abc.html">Our Team</a></li>
-                <li class="nav-item"><a class="nav-link" href="xyz.html">XYZ</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-<div class="container-fluid main-content">
-    <div class="container">
-        <div class="row">
-            <div class="pics"> 
-            <a class="wastebag" href="Images/PRODUCTS/1.jpg" target="_blank"> 
-                <img src="Images/PRODUCTS/1.jpg" alt="Product Image">
-            </a>
-            <a class="services" href="Images/PRODUCTS/2.jpg" target="_blank"> 
-                <img src="Images/PRODUCTS/2.jpg" alt="Product Image">
-            </a>
-            <a class="big" href="Images/PRODUCTS/4.jpg" target="_blank"> 
-                <img src="Images/PRODUCTS/4.jpg" alt="Product Image">
-            </a>
-            <a href="https://microlifeusa.com/" target="_blank">
-                <img src="Images/PRODUCTS/IMG-20250319-WA0007.jpg" alt="Product 4">
-            </a>
-            <a href="https://www.agappe.com/in/mispa-viva.html" target="_blank">
-                <img src="Images/PRODUCTS/IMG-20250319-WA0011.jpg" alt="Product 5">
-            </a>
-            <a href="https://www.agappe.com/in/" target="_blank">
-                <img src="Images/PRODUCTS/IMG-20250319-WA0012.jpg" alt="Product 6">
-            </a>
-            <a href="https://www.agappe.com/in/mispa-viva.html" target="_blank">
-                <img src="Images/PRODUCTS/IMG-20250319-WA0013.jpg" alt="Product 7">
-            </a>
-            <a href="https://www.agappe.com/in/semi-auto-analyser-mispa-plus.html" target="_blank">
-                <img src="Images/PRODUCTS/IMG-20250319-WA0014.jpg" alt="Product 8">
-            </a>
-            <a href="https://jmitra.co.in/product-details/iquant-analyser/" target="_blank">
-                <img src="Images/PRODUCTS/IMG-20250319-WA0015.jpg" alt="Product 9">
-            </a>
-            <a href="Images/PRODUCTS/IMG-20250319-WA0016.jpg" target="_blank">
-                <img src="Images/PRODUCTS/IMG-20250319-WA0016.jpg" alt="Product 10">
-            </a>
-            <a href="Images/PRODUCTS/IMG-20250319-WA0017.jpg" target="_blank">
-                <img src="Images/PRODUCTS/IMG-20250319-WA0017.jpg" alt="Product 11">
-            </a>
-            <a href="https://www.agappe.com/media/catalog/product/file/Mispa_i180_Brochure.pdf" target="_blank">
-                <img src="Images/PRODUCTS/IMG-20250319-WA0037.jpg" alt="Product 12">
-            </a>
-        </div>
-        </div>
-    </div>
-</div>
-
-<!-- Footer -->
-<div class="container-fluid footer"> 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 contact">
-                <h2>Contact Information</h2>
-                <p>Address: Damak-6, Jhapa <a href="https://maps.app.goo.gl/1zjA38Yi9mMP39f19"> Google Maps</a></p>
-                <p>Phone: <a href="tel:023575635">023575635</a>  
-                    <a href="tel:9842632512">9842632512</a>            
-        </p>
-
-        <p>Email: <a href="mailto:gmlsdmk@gmail.com">gmlsdmk@gmail.com</a></p>
+                    <a href="Images/PRODUCTS/2.jpg" target="_blank">
+                        <img src="Images/PRODUCTS/2.jpg" alt="Product 2" class="img-thumbnail m-2" width="150">
+                    </a>
+                </div>
             </div>
         </div>
+
+        <!-- Category 2 -->
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo">
+                        Category 2
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseTwo" class="collapse" data-parent="#productAccordion">
+                <div class="card-body d-flex flex-wrap">
+                    <a href="Images/PRODUCTS/4.jpg" target="_blank">
+                        <img src="Images/PRODUCTS/4.jpg" alt="Product 3" class="img-thumbnail m-2" width="150">
+                    </a>
+                    <a href="Images/PRODUCTS/IMG-20250319-WA0007.jpg" target="_blank">
+                        <img src="Images/PRODUCTS/IMG-20250319-WA0007.jpg" alt="Product 4" class="img-thumbnail m-2" width="150">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add more categories as needed -->
     </div>
-</div>
-<div class="text-center copyright">
-    <p>Copyright © 2025 Global Medilab & Surgical Pvt. Ltd | Designed by [Aagaman Baral]</p>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
