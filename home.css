@@ -9,7 +9,7 @@ body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f8f9fa;
+  background-color: #f1f8ff; /* Very light blue */
   color: #333;
 }
 
@@ -318,6 +318,7 @@ body {
     width: 90%;
   }
 }
+
 .team-photo {
     width: 100%;
     max-width: 180px;
@@ -327,25 +328,17 @@ body {
     border: 4px solid #57ba54;
     margin-bottom: 10px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  }
+}
   
-  h5 {
+h5 {
     margin-top: 10px;
     font-weight: 600;
     color: #333;
-  }
+}
   
-  p {
+p {
     color: #666;
     font-size: 14px;
-  }
-/* General Styles */
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f8f9fa; /* Light grayish background */
-    color: #333;
-    margin: 0;
-    padding: 0;
 }
 
 /* Team Section */
@@ -385,7 +378,7 @@ body {
 }
 
 .team-member:hover h5 {
-    color: #007bff; /* Blue color for the name on hover */
+    color: #007bff;
 }
 
 /* Layout for Team Member Photos */
@@ -399,7 +392,7 @@ body {
 
 /* Background Animation on Hover */
 .team-member:hover {
-    background-color: #eef6fc; /* Light blue background */
+    background-color: #e9f5ff; /* Very light blue background */
     border-radius: 10px;
     transition: background-color 0.3s ease;
 }
@@ -434,32 +427,3 @@ body {
     transform-origin: bottom left;
 }
 
-/* Styling for the main content */
-.main-content {
-    padding: 60px 0;
-}
-
-/* Footer */
-.footer {
-    background: #f1f1f1;
-    color: #333;
-    padding: 30px 0;
-    border-radius: 15px 15px 0 0;
-}
-
-.copyright {
-    background: #222;
-    color: white;
-    padding: 15px;
-    text-align: center;
-}
-
-.footer a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.footer a:hover {
-    color: #0056b3;
-}
-  
