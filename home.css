@@ -33,6 +33,7 @@ body {
 .col-md-6_logo img {
   max-width: 150px;
   height: auto;
+  transition: none;
 }
 
 /* Navbar */
