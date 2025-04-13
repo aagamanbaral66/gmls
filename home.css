@@ -282,6 +282,25 @@ body {
 }
 
 /* Remove hover effects from the copyright */
+/* Prevent hover effect on the contact section */
+.contact {
+  transition: none; /* Remove any hover effect */
+}
+
+.contact a {
+  transition: none; /* Remove hover effect on the links */
+}
+
+/* Optional: Remove hover color change */
+.contact a:hover {
+  color: inherit; /* Ensure the color stays the same on hover */
+}
+
+/* If you want to ensure the background doesn't change on hover */
+.contact:hover {
+  background-color: transparent; /* Keep the background unchanged */
+}
+
 .copyright {
   background: #222;
   color: white;
