@@ -359,15 +359,8 @@ p {
 }
 /* Copyright Section */
 .copyright {
-  background: #222; /* Black background */
+  background: #222;
   color: white;
   padding: 15px;
   text-align: center;
-  position: relative;
-  z-index: 100;
-}
-
-/* Prevent hover from changing the background */
-.team-member:hover .copyright {
-  background: #222; /* Ensure the background remains black */
 }
