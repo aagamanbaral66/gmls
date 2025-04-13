@@ -398,39 +398,25 @@ p {
 }
 
 /* Background Animation on Hover */
+.team-member:hover .team-photo {
+  transform: none;
+  box-shadow: none;
+}
+
+.team-member:hover h5 {
+  color: #333;
+}
+
+.row .col-md-4:hover,
+.row .col-md-6:hover {
+  transform: none;
+}
+
 .team-member:hover {
-    background-color: #e9f5ff; /* Very light blue background */
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
-}
-
-/* Add a subtle animation effect for the container */
-.container-fluid {
-    padding: 20px;
-}
-
-/* Animation for Text */
-.team-member h5 {
-    position: relative;
-    display: inline-block;
-    color: #333;
-}
-
-.team-member h5::before {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #007bff;
-    transform: scaleX(0);
-    transform-origin: bottom right;
-    transition: transform 0.3s ease-out;
+  background-color: transparent;
 }
 
 .team-member:hover h5::before {
-    transform: scaleX(1);
-    transform-origin: bottom left;
+  transform: scaleX(0);
 }
 
