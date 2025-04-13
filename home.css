@@ -339,4 +339,127 @@ body {
     color: #666;
     font-size: 14px;
   }
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa; /* Light grayish background */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Team Section */
+.team-section {
+    margin: 40px 0;
+}
+
+.team-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.team-member {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.team-member h5 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.team-member p {
+    font-size: 14px;
+    color: #777;
+}
+
+/* Hover Effects for Team Members */
+.team-member:hover .team-photo {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.team-member:hover h5 {
+    color: #007bff; /* Blue color for the name on hover */
+}
+
+/* Layout for Team Member Photos */
+.row .col-md-4, .row .col-md-6 {
+    transition: transform 0.3s ease;
+}
+
+.row .col-md-4:hover, .row .col-md-6:hover {
+    transform: translateY(-10px); /* Floating effect on hover */
+}
+
+/* Background Animation on Hover */
+.team-member:hover {
+    background-color: #eef6fc; /* Light blue background */
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+/* Add a subtle animation effect for the container */
+.container-fluid {
+    padding: 20px;
+}
+
+/* Animation for Text */
+.team-member h5 {
+    position: relative;
+    display: inline-block;
+    color: #333;
+}
+
+.team-member h5::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #007bff;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.team-member:hover h5::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Styling for the main content */
+.main-content {
+    padding: 60px 0;
+}
+
+/* Footer */
+.footer {
+    background: #f1f1f1;
+    color: #333;
+    padding: 30px 0;
+    border-radius: 15px 15px 0 0;
+}
+
+.copyright {
+    background: #222;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+.footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #0056b3;
+}
   
