@@ -281,12 +281,18 @@ body {
   color: #0056b3;
 }
 
+/* Remove hover effects from the copyright */
 .copyright {
   background: #222;
   color: white;
   padding: 15px;
   text-align: center;
 }
+
+.team-member:hover .copyright {
+  background: #222; /* Prevent hover from changing the background */
+}
+
 
 /* Media Queries for Mobile */
 @media (max-width: 768px) {
