@@ -2,124 +2,49 @@
 <html lang="en">
 <head>
     <title>Products</title>
-    <link rel="icon" type="image/png" href="Images/global.png" />
+    <link rel="icon" type="image/png" href="../Images/global.png" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="home.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
 </head>
 <body>
 
-<!-- Header -->
-<div class="container-fluid header">
-    <div class="row align-items-center">
-        <div class="col-md-6 col-md-6_logo">
-            <!-- Logo -->
-            <a href="home.html"><img src="Images\global.png" alt="Global Logo"></a>
-        </div>
-        <div class="col-md-6 text-right">
-            <!-- Text to the right of the logo -->
-            <h1 class="header-text"></h1>
-        </div>
-    </div>
-</div>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light navigation">
+ <nav class="navbar navbar-expand-lg navbar-light bg-light navigation">
     <div class="container">
-        <!-- Left Navigation Items -->
-        <div class="navbar-nav-left">
-            <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <a class="navbar-brand d-lg-none" href="#">Menu</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-                <!-- Dropdown Menu -->
-                <!-- <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Services
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Service 1</a>
-                        <a class="dropdown-item" href="#">Service 2</a>
-                        <a class="dropdown-item" href="#">Service 3</a>
-                    </div>
-                </li> -->
+        <div class="collapse navbar-collapse justify-content-between" id="navbarContent">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="../">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="../products.html">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="../contact.html">Contact</a></li>
             </ul>
-        </div>
-
-        <!-- Right Navigation Items -->
-        <div class="navbar-nav-right ml-auto">
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-                <li class="nav-item"><a class="nav-link" href="abc.html">Our Team</a></li>
-                <li class="nav-item"><a class="nav-link" href="xyz.html">XYZ</a></li>
+                <li class="nav-item"><a class="nav-link" href="../gallery.html">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" href="../team.html">Our Team</a></li>
+                <li class="nav-item"><a class="nav-link" href="../xyz.html">XYZ</a></li>
             </ul>
         </div>
     </div>
-</nav>
+</nav>  
 
-<div class="container-fluid main-content">
+<div id="productPage" class="container-fluid main-content products__content">
+
     <div class="container">
         <div class="container">
             <div class="accordion" id="productAccordion">
-                <!--
-
                
-                <div class="card">
-                    <div class="card-header" data-toggle="collapse" data-target="#category1">
-                        <h5 class="mb-0">Reagents</h5>
-                    </div>
-                    <div id="category1" class="collapse" data-parent="#productAccordion">
-                        <div class="card-body">
-                            <a href="Images/PRODUCTS/1.jpg" target="_blank">
-                                <img src="Images/PRODUCTS/1.jpg" alt="Product Image">
-                            </a>
-                        </div>
-                    </div>
-                </div>
                 
-                <div class="card">
-                    <div class="card-header" data-toggle="collapse" data-target="#category2">
-                        <h5 class="mb-0">Machines</h5>
-                    </div>
-                    <div id="category2" class="collapse" data-parent="#productAccordion">
-                        <div class="card-body">
-                            <a href="Images/PRODUCTS/2.jpg" target="_blank">
-                                <img src="Images/PRODUCTS/2.jpg" alt="Product Image">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-               
-                <div class="card">
-                    <div class="card-header" data-toggle="collapse" data-target="#category3">
-                        <h5 class="mb-0">Personal Hygiene</h5>
-                    </div>
-                    <div id="category3" class="collapse" data-parent="#productAccordion">
-                        <div class="card-body">
-                            <a href="Images/PRODUCTS/1.jpg" target="_blank">
-                                <img src="Images/PRODUCTS/1.jpg" alt="Product Image">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-               
-                <div class="card">
-                    <div class="card-header" data-toggle="collapse" data-target="#category4">
-                        <h5 class="mb-0">Misc.</h5>
-                    </div>
-                    <div id="category4" class="collapse" data-parent="#productAccordion">
-                        <div class="card-body">
-                            <a href="Images/PRODUCTS/1.jpg" target="_blank">
-                                <img src="Images/PRODUCTS/1.jpg" alt="Product Image">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                            -->
                             <div class="card">
                                 <div class="card-header" data-toggle="collapse" data-target="#category1">
                                     <h5 class="mb-0">Haematology</h5>
@@ -127,24 +52,77 @@
                                 <div id="category1" class="collapse" data-parent="#productAccordion">
                                     <div class="card-body">
                                         <div class="row">
+                                            <div class="col-12 my-4">
+                                                 <h5 class="text-center">3-Part Analyzer</h5>
+                                            </div>
+
                                             <div class="col-md-3 text-center mb-4">
-                                                <a href="Images/PRODUCTS/1.jpg" target="_blank">
-                                                    <img src="Images/PRODUCTS/1.jpg" alt="Product Image" class="img-fluid">
+                                                <a href="info/countx.html" target="_blank" >
+                                                    <img src="Images/PRODUCTS/hematology1.jpg" alt="Product Image" class="img-fluid">
+                                                <h6 class="mt-2">Agappe Mispa Count X</h6>
                                                 </a>
-                                                <h6 class="mt-2">Haematology Product 1</h6>
                                             </div>
                                             <div class="col-md-3 text-center mb-4">
-                                                <a href="Images/PRODUCTS/2.jpg" target="_blank">
-                                                    <img src="Images/PRODUCTS/2.jpg" alt="Product Image" class="img-fluid">
+                                                <a href="info/countplus.html" target="_blank">
+                                                    <img src="Images/Products/hematology2.png" alt="Product Image" class="img-fluid">
+                                                <h6 class="mt-2">Agappe Mispa Count X Plus</h6>
                                                 </a>
-                                                <h6 class="mt-2">Haematology Product 2</h6>
                                             </div>
                                             <div class="col-md-3 text-center mb-4">
-                                                <a href="Images/PRODUCTS/3.jpg" target="_blank">
-                                                    <img src="Images/PRODUCTS/3.jpg" alt="Product Image" class="img-fluid">
+                                                <a href="info/h33s.html" target="_blank">
+                                                    <img src="Images/Products/hematology3.png" alt="Product Image" class="img-fluid">
+                                                <h6 class="mt-2">Avantor Benesphera H33S</h6>
                                                 </a>
-                                                <h6 class="mt-2">Haematology Product 3</h6>
                                             </div>
+                                            <div class="col-md-3 text-center mb-4">
+                                                <a href="info/bh360.html" target="_blank">
+                                                    <img src="Images/Products/hematology5.png" alt="Product Image" class="img-fluid">
+                                                <h6 class="mt-2">Bioline BH360</h6>
+                                                </a>
+                                            </div>
+                                            <div class="col-md-3 text-center mb-4">
+                                                <a href="info/erbah360.html" target="_blank">
+                                                    <img src="Images/Products/hematology4.png" alt="Product Image" class="img-fluid">
+                                                <h6 class="mt-2">Erba H360</h6>
+                                                </a>
+                                            </div>
+                                            
+
+                                            <div class="col-12 my-4">
+                                                 <h5 class="text-center">5-Part Analyzer</h5>
+                                            </div>
+
+
+                                            <div class="col-md-3 text-center mb-4">
+                                                <a href="info/hx50.html" target="_blank">
+                                                    <img src="Images/Products/hematology6.png" alt="Product Image" class="img-fluid">
+                                                <h6 class="mt-2">Agappe Mispa HX50</h6>
+                                                </a>
+                                            </div>
+                                            <div class="col-md-3 text-center mb-4">
+                                                <a href="https://www.biolinediagnostics.com/hematology/#BH560Pro" target="_blank">
+                                                    <img src="Images/Products/hematology9.png" alt="Product Image" class="img-fluid">
+                                                <h6 class="mt-2">Bioline BH560 Pro</h6>
+                                                </a>
+                                            </div>
+                                            <div class="col-md-3 text-center mb-4">
+                                                <a href="https://www.erbalachema.com/en/products-and-solutions/hematology/h-560/" target="_blank">
+                                                    <img src="Images/Products/hematology7.png" alt="Product Image" class="img-fluid">
+                                                <h6 class="mt-2">Erba H560</h6>
+                                                </a>
+                                            </div>
+
+                                            <div class="col-12 my-4">
+                                                 <h5 class="text-center">6-Part Analyzer</h5>
+                                            </div>
+
+                                            <div class="col-md-3 text-center mb-4">
+                                                <a href="https://www.agappe.com/in/mispa-hx80-6-part-cell-counter.html" target="_blank">
+                                                    <img src="Images/Products/hematology8.png" alt="Product Image" class="img-fluid">
+                                                <h6 class="mt-2">Agappe Mispa HX80</h6>
+                                                </a>
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -157,17 +135,69 @@
                                 <div id="category2" class="collapse" data-parent="#productAccordion">
                                     <div class="card-body">
                                         <div class="row">
+
+                                            <div class="col-12 my-4">
+                                                 <h5 class="text-center">Semi Automatic Analyzer</h5>
+                                            </div>
+
                                             <div class="col-md-3 text-center mb-4">
-                                                <a href="Images/PRODUCTS/1.jpg" target="_blank">
-                                                    <img src="Images/PRODUCTS/1.jpg" alt="Product Image" class="img-fluid">
+                                                <a href="https://www.agappe.com/in/mispa-viva.html" target="_blank">
+                                                    <img src="Images/PRODUCTS/biochemistry1.png" alt="Product Image" class="img-fluid">
+                                                <h6 class="mt-2">Agappe Mispa Viva</h6>
                                                 </a>
-                                                <h6 class="mt-2">Biochemistry Product 1</h6>
                                             </div>
                                             <div class="col-md-3 text-center mb-4">
-                                                <a href="Images/PRODUCTS/2.jpg" target="_blank">
-                                                    <img src="Images/PRODUCTS/2.jpg" alt="Product Image" class="img-fluid">
+                                                <a href="https://www.agappe.com/in/semi-auto-analyser-mispa-plus.html" target="_blank">
+                                                    <img src="Images/PRODUCTS/biochemistry2.png" alt="Product Image" class="img-fluid">
+                                                <h6 class="mt-2">Agappe Mispa Plus</h6>
                                                 </a>
-                                                <h6 class="mt-2">Biochemistry Product 2</h6>
+                                            </div>
+                                            <div class="col-md-3 text-center mb-4">
+                                                <a href="https://www.avantorsciences.com/in/en/product/44325263/benespheratm-c-61-chemistry-analyser" target="_blank">
+                                                    <img src="Images/PRODUCTS/biochemistry4.png" alt="Product Image" class="img-fluid">
+                                                <h6 class="mt-2">Avantor Beneshphera C61</h6>
+                                                </a>
+                                            </div>
+                                            <div class="col-md-3 text-center mb-4">
+                                                <a href="https://www.biolinediagnostics.com/biochemistry/#BC100" target="_blank">
+                                                    <img src="Images/PRODUCTS/biochemistry3.png" alt="Product Image" class="img-fluid">
+                                                <h6 class="mt-2">Bioline  BC230 Plus</h6>
+                                                </a>
+                                            </div>
+                                            <div class="col-md-3 text-center mb-4">
+                                                <a href="https://product.erbamannheim.com/instrument/clinical-chemistry/chem-5x/89" target="_blank">
+                                                    <img src="Images/PRODUCTS/biochemistry5.png" alt="Product Image" class="img-fluid">
+                                                <h6 class="mt-2">Erba Chem 5x</h6>
+                                                </a>
+                                            </div>
+                                            <div class="col-md-3 text-center mb-4">
+                                                <a href="https://product.erbamannheim.com/instrument/clinical-chemistry/chem-7/88" target="_blank">
+                                                    <img src="Images/PRODUCTS/biochemistry6.png" alt="Product Image" class="img-fluid">
+                                                <h6 class="mt-2">Erba Chem 7</h6>
+                                                </a>
+                                            </div>
+
+                                            <div class="col-12 my-4">
+                                                 <h5 class="text-center">Fully Automatic Analyzer</h5>
+                                            </div>
+
+                                            <div class="col-md-3 text-center mb-4">
+                                                <a href="https://www.agappe.com/in/mispa-fab-120-clinical-chemistry-analyzer.html" target="_blank">
+                                                    <img src="Images/PRODUCTS/biochemistry8.png" alt="Product Image" class="img-fluid">
+                                                <h6 class="mt-2">Agappe Mispa FAB 120</h6>
+                                                </a>
+                                            </div>
+                                            <div class="col-md-3 text-center mb-4">
+                                                <a href="https://www.agappe.com/in/biolis-30i-chemistry-analyzer.html" target="_blank">
+                                                    <img src="Images/PRODUCTS/biochemistry9.png" alt="Product Image" class="img-fluid">
+                                                <h6 class="mt-2">Agappe Biolis 30i</h6>
+                                                </a>
+                                            </div>
+                                            <div class="col-md-3 text-center mb-4">
+                                                <a href="https://www.biolinediagnostics.com/biochemistry/#SL120" target="_blank">
+                                                    <img src="Images/PRODUCTS/biochemistry7.png" alt="Product Image" class="img-fluid">
+                                                <h6 class="mt-2">Bioline BC 2000</h6>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -176,23 +206,94 @@
                             
                             <div class="card">
                                 <div class="card-header" data-toggle="collapse" data-target="#category3">
-                                    <h5 class="mb-0">Immunology & Serology</h5>
+                                    <h5 class="mb-0">Immunology & Endocrinology</h5>
                                 </div>
                                 <div id="category3" class="collapse" data-parent="#productAccordion">
                                     <div class="card-body">
                                         <div class="row">
+
+                                            <div class="col-12 my-4">
+                                                 <h5 class="text-center">Semi Automatic Analyzer</h5>
+                                            </div>
+
                                             <div class="col-md-3 text-center mb-4">
-                                                <a href="Images/PRODUCTS/1.jpg" target="_blank">
-                                                    <img src="Images/PRODUCTS/1.jpg" alt="Product Image" class="img-fluid">
+                                                <a href="https://www.tosohindia.com/our-products/analyzers/immunoassay-analyzers/semi-automated-clia-analyzer/radiance" target="_blank">
+                                                    <img src="Images/PRODUCTS/immunology.png" alt="Product Image" class="img-fluid">
+                                                <h6 class="mt-2">Tosoh Radiance</h6>
                                                 </a>
-                                                <h6 class="mt-2">Immunology Product 1</h6>
+                                            </div>
+
+                                            <div class="col-12 my-4">
+                                                 <h5 class="text-center">Fully Automatic Analyzer</h5>
+                                            </div>
+
+                                            <div class="col-md-3 text-center mb-4">
+                                                <a href="https://www.agappe.com/in/mispa-i200-immunoassay-analyzer.html" target="_blank">
+                                                    <img src="Images/PRODUCTS/immunology2.png" alt="Product Image" class="img-fluid">
+                                                <h6 class="mt-2">Agappe Mispa i200</h6>
+                                                </a>
                                             </div>
                                             <div class="col-md-3 text-center mb-4">
-                                                <a href="Images/PRODUCTS/2.jpg" target="_blank">
-                                                    <img src="Images/PRODUCTS/2.jpg" alt="Product Image" class="img-fluid">
+                                                <a href="https://www.agappe.com/in/mispa-i180-clia-analyzer.html" target="_blank">
+                                                    <img src="Images/PRODUCTS/immunology3.png" alt="Product Image" class="img-fluid">
+                                                <h6 class="mt-2">Agappe Mispa i180</h6>
                                                 </a>
-                                                <h6 class="mt-2">Immunology Product 2</h6>
                                             </div>
+                                            <div class="col-md-3 text-center mb-4">
+                                                <a href="https://www.agappe.com/in/mispa-i60-chemiluminescence-enzyme-immunoassay-system.html" target="_blank">
+                                                    <img src="Images/PRODUCTS/immunology4.png" alt="Product Image" class="img-fluid">
+                                                <h6 class="mt-2">Agappe Mispa i60</h6>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card">
+                                <div class="card-header" data-toggle="collapse" data-target="#category12">
+                                    <h5 class="mb-0">Protein Analyzers & POCT Devices</h5>
+                                </div>
+                                <div id="category12" class="collapse" data-parent="#productAccordion">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-3 text-center mb-4">
+                                                <a href="https://www.agappe.com/in/mispa-i2.html" target="_blank">
+                                                    <img src="Images/PRODUCTS/protein.png" alt="Product Image" class="img-fluid">
+                                                <h6 class="mt-2">Agappe Mispa i2</h6>
+                                                </a>
+                                            </div>
+                                            <div class="col-md-3 text-center mb-4">
+                                                <a href="https://www.agappe.com/in/mispa-i3.html" target="_blank">
+                                                    <img src="Images/PRODUCTS/protein2.png" alt="Product Image" class="img-fluid">
+                                                <h6 class="mt-2">Agappe Mispa i3</h6>
+                                                </a>
+                                            </div>
+                                            <div class="col-md-3 text-center mb-4">
+                                                <a href="https://www.boditech.co.kr/en/product/instruments/id/4" target="_blank">
+                                                    <img src="Images/PRODUCTS/protein3.png" alt="Product Image" class="img-fluid">
+                                                <h6 class="mt-2">Boditech iChroma</h6>
+                                                </a>
+                                            </div>
+                                            <div class="col-md-3 text-center mb-4">
+                                                <a href="https://jmitra.co.in/product-details/iquant-analyser/" target="_blank">
+                                                    <img src="Images/PRODUCTS/protein4.png" alt="Product Image" class="img-fluid">
+                                                <h6 class="mt-2">JMitra iQuant</h6>
+                                                </a>
+                                            </div>
+                                            <div class="col-md-3 text-center mb-4">
+                                                <a href="https://www.agappe.com/in/mispa-i2.html" target="_blank">
+                                                    <img src="Images/PRODUCTS/protein5.png" alt="Product Image" class="img-fluid">
+                                                <h6 class="mt-2">Glucometer</h6>
+                                                </a>
+                                            </div>
+                                            <div class="col-md-3 text-center mb-4">
+                                                <a href="https://www.agappe.com/in/mispa-i2.html" target="_blank">
+                                                    <img src="Images/PRODUCTS/protein6.png" alt="Product Image" class="img-fluid">
+                                                <h6 class="mt-2">Haemoglobinometer</h6>
+                                                </a>
+                                            </div>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -205,82 +306,19 @@
                                 <div id="category4" class="collapse" data-parent="#productAccordion">
                                     <div class="card-body">
                                         <div class="row">
-                                            <div class="col-md-3 text-center mb-4">
-                                                <a href="Images/PRODUCTS/1.jpg" target="_blank">
-                                                    <img src="Images/PRODUCTS/1.jpg" alt="Product Image" class="img-fluid">
-                                                </a>
-                                                <h6 class="mt-2">Microbiology Product 1</h6>
-                                            </div>
-                                            <div class="col-md-3 text-center mb-4">
-                                                <a href="Images/PRODUCTS/2.jpg" target="_blank">
-                                                    <img src="Images/PRODUCTS/2.jpg" alt="Product Image" class="img-fluid">
-                                                </a>
-                                                <h6 class="mt-2">Microbiology Product 2</h6>
-                                            </div>
-                                            <div class="col-md-3 text-center mb-4">
-                                                <a href="Images/PRODUCTS/3.jpg" target="_blank">
-                                                    <img src="Images/PRODUCTS/3.jpg" alt="Product Image" class="img-fluid">
-                                                </a>
-                                                <h6 class="mt-2">Microbiology Product 3</h6>
-                                            </div>
+                                            
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="card">
                                 <div class="card-header" data-toggle="collapse" data-target="#category5">
-                                    <h5 class="mb-0">Endocrinology</h5>
+                                    <h5 class="mb-0">Serology & RDT/IBD</h5>
                                 </div>
                                 <div id="category5" class="collapse" data-parent="#productAccordion">
                                     <div class="card-body">
                                         <div class="row">
-                                            <div class="col-md-3 text-center mb-4">
-                                                <a href="Images/PRODUCTS/1.jpg" target="_blank">
-                                                    <img src="Images/PRODUCTS/1.jpg" alt="Product Image" class="img-fluid">
-                                                </a>
-                                                <h6 class="mt-2">Endocrinology Product 1</h6>
-                                            </div>
-                                            <div class="col-md-3 text-center mb-4">
-                                                <a href="Images/PRODUCTS/2.jpg" target="_blank">
-                                                    <img src="Images/PRODUCTS/2.jpg" alt="Product Image" class="img-fluid">
-                                                </a>
-                                                <h6 class="mt-2">Endocrinology Product 2</h6>
-                                            </div>
-                                            <div class="col-md-3 text-center mb-4">
-                                                <a href="Images/PRODUCTS/3.jpg" target="_blank">
-                                                    <img src="Images/PRODUCTS/3.jpg" alt="Product Image" class="img-fluid">
-                                                </a>
-                                                <h6 class="mt-2">Endocrinology Product 3</h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header" data-toggle="collapse" data-target="#category6">
-                                    <h5 class="mb-0">Tumour Markers & RDT</h5>
-                                </div>
-                                <div id="category6" class="collapse" data-parent="#productAccordion">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-md-3 text-center mb-4">
-                                                <a href="Images/PRODUCTS/1.jpg" target="_blank">
-                                                    <img src="Images/PRODUCTS/1.jpg" alt="Product Image" class="img-fluid">
-                                                </a>
-                                                <h6 class="mt-2">Tumour Markers & RDT Product 1</h6>
-                                            </div>
-                                            <div class="col-md-3 text-center mb-4">
-                                                <a href="Images/PRODUCTS/2.jpg" target="_blank">
-                                                    <img src="Images/PRODUCTS/2.jpg" alt="Product Image" class="img-fluid">
-                                                </a>
-                                                <h6 class="mt-2">Tumour Markers & RDT Product 2</h6>
-                                            </div>
-                                            <div class="col-md-3 text-center mb-4">
-                                                <a href="Images/PRODUCTS/3.jpg" target="_blank">
-                                                    <img src="Images/PRODUCTS/3.jpg" alt="Product Image" class="img-fluid">
-                                                </a>
-                                                <h6 class="mt-2">Tumour Markers & RDT Product 3</h6>
-                                            </div>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -292,24 +330,7 @@
                                 <div id="category7" class="collapse" data-parent="#productAccordion">
                                     <div class="card-body">
                                         <div class="row">
-                                            <div class="col-md-3 text-center mb-4">
-                                                <a href="Images/PRODUCTS/1.jpg" target="_blank">
-                                                    <img src="Images/PRODUCTS/1.jpg" alt="Product Image" class="img-fluid">
-                                                </a>
-                                                <h6 class="mt-2">Surgical Instruments Product 1</h6>
-                                            </div>
-                                            <div class="col-md-3 text-center mb-4">
-                                                <a href="Images/PRODUCTS/2.jpg" target="_blank">
-                                                    <img src="Images/PRODUCTS/2.jpg" alt="Product Image" class="img-fluid">
-                                                </a>
-                                                <h6 class="mt-2">Surgical Instruments Product 2</h6>
-                                            </div>
-                                            <div class="col-md-3 text-center mb-4">
-                                                <a href="Images/PRODUCTS/3.jpg" target="_blank">
-                                                    <img src="Images/PRODUCTS/3.jpg" alt="Product Image" class="img-fluid">
-                                                </a>
-                                                <h6 class="mt-2">Surgical Instruments Product 3</h6>
-                                            </div>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -321,24 +342,7 @@
                                 <div id="category8" class="collapse" data-parent="#productAccordion">
                                     <div class="card-body">
                                         <div class="row">
-                                            <div class="col-md-3 text-center mb-4">
-                                                <a href="Images/PRODUCTS/1.jpg" target="_blank">
-                                                    <img src="Images/PRODUCTS/1.jpg" alt="Product Image" class="img-fluid">
-                                                </a>
-                                                <h6 class="mt-2">Medical Equipments Product 1</h6>
-                                            </div>
-                                            <div class="col-md-3 text-center mb-4">
-                                                <a href="Images/PRODUCTS/2.jpg" target="_blank">
-                                                    <img src="Images/PRODUCTS/2.jpg" alt="Product Image" class="img-fluid">
-                                                </a>
-                                                <h6 class="mt-2">Medical Equipments Product 2</h6>
-                                            </div>
-                                            <div class="col-md-3 text-center mb-4">
-                                                <a href="Images/PRODUCTS/3.jpg" target="_blank">
-                                                    <img src="Images/PRODUCTS/3.jpg" alt="Product Image" class="img-fluid">
-                                                </a>
-                                                <h6 class="mt-2">Medical Equipments Product 3</h6>
-                                            </div>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -351,24 +355,7 @@
                                 <div id="category9" class="collapse" data-parent="#productAccordion">
                                     <div class="card-body">
                                         <div class="row">
-                                            <div class="col-md-3 text-center mb-4">
-                                                <a href="Images/PRODUCTS/1.jpg" target="_blank">
-                                                    <img src="Images/PRODUCTS/1.jpg" alt="Product Image" class="img-fluid">
-                                                </a>
-                                                <h6 class="mt-2">Opthalmic Consumables Product 1</h6>
-                                            </div>
-                                            <div class="col-md-3 text-center mb-4">
-                                                <a href="Images/PRODUCTS/2.jpg" target="_blank">
-                                                    <img src="Images/PRODUCTS/2.jpg" alt="Product Image" class="img-fluid">
-                                                </a>
-                                                <h6 class="mt-2">Opthalmic Consumables Product 2</h6>
-                                            </div>
-                                            <div class="col-md-3 text-center mb-4">
-                                                <a href="Images/PRODUCTS/3.jpg" target="_blank">
-                                                    <img src="Images/PRODUCTS/3.jpg" alt="Product Image" class="img-fluid">
-                                                </a>
-                                                <h6 class="mt-2">Opthalmic Consumables Product 3</h6>
-                                            </div>
+                                           
                                         </div>
                                     </div>
                                 </div>
@@ -380,28 +367,12 @@
                                 <div id="category10" class="collapse" data-parent="#productAccordion">
                                     <div class="card-body">
                                         <div class="row">
-                                            <div class="col-md-3 text-center mb-4">
-                                                <a href="Images/PRODUCTS/1.jpg" target="_blank">
-                                                    <img src="Images/PRODUCTS/1.jpg" alt="Product Image" class="img-fluid">
-                                                </a>
-                                                <h6 class="mt-2">Sanitation & Hygiene Product 1</h6>
-                                            </div>
-                                            <div class="col-md-3 text-center mb-4">
-                                                <a href="Images/PRODUCTS/2.jpg" target="_blank">
-                                                    <img src="Images/PRODUCTS/2.jpg" alt="Product Image" class="img-fluid">
-                                                </a>
-                                                <h6 class="mt-2">Sanitation & Hygiene Product 2</h6>
-                                            </div>
-                                            <div class="col-md-3 text-center mb-4">
-                                                <a href="Images/PRODUCTS/3.jpg" target="_blank">
-                                                    <img src="Images/PRODUCTS/3.jpg" alt="Product Image" class="img-fluid">
-                                                </a>
-                                                <h6 class="mt-2">Sanitation & Hygiene Product 3</h6>
-                                            </div>
+                                            
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            
                             <div class="card">
                                 <div class="card-header" data-toggle="collapse" data-target="#category11">
                                     <h5 class="mb-0">Orthopedic & Disability Products</h5>
@@ -409,28 +380,24 @@
                                 <div id="category11" class="collapse" data-parent="#productAccordion">
                                     <div class="card-body">
                                         <div class="row">
-                                            <div class="col-md-3 text-center mb-4">
-                                                <a href="Images/PRODUCTS/1.jpg" target="_blank">
-                                                    <img src="Images/PRODUCTS/1.jpg" alt="Product Image" class="img-fluid">
-                                                </a>
-                                                <h6 class="mt-2">Orthopedic & Disability Products Product 1</h6>
-                                            </div>
-                                            <div class="col-md-3 text-center mb-4">
-                                                <a href="Images/PRODUCTS/2.jpg" target="_blank">
-                                                    <img src="Images/PRODUCTS/2.jpg" alt="Product Image" class="img-fluid">
-                                                </a>
-                                                <h6 class="mt-2">Orthopedic & Disability Products Product 2</h6>
-                                            </div>
-                                            <div class="col-md-3 text-center mb-4">
-                                                <a href="Images/PRODUCTS/3.jpg" target="_blank">
-                                                    <img src="Images/PRODUCTS/3.jpg" alt="Product Image" class="img-fluid">
-                                                </a>
-                                                <h6 class="mt-2">Orthopedic & Disability Products Product 3</h6>
-                                            </div>
+                                            
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="card">
+                                <div class="card-header" data-toggle="collapse" data-target="#category13">
+                                    <h5 class="mb-0">General & Miscellaneous</h5>
+                                </div>
+                                <div id="category13" class="collapse" data-parent="#productAccordion">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
             </div>
         </div>
     </div>
@@ -452,11 +419,59 @@
     </div>
 </div>
 <div class="text-center copyright">
-    <p>Copyright © 2025 Global Medilab & Surgical Pvt. Ltd | Designed by [Aagaman Baral]</p>
+    <p>Copyright © 2025 Global Medilab & Surgical Pvt. Ltd | Assembled by [Aagaman Baral]</p>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const pageBg = document.getElementById("productPage");
+
+    const categories = {
+        "#category1": "Images/PRODUCTS/Untitled1.png",
+        "#category2": "Images/PRODUCTS/Biochemistry.png",
+        "#category3": "Images/PRODUCTS/immunology-bg.jpg",
+        "#category4": "Images/PRODUCTS/microbiology-bg.jpg",
+        "#category5": "Images/PRODUCTS/endocrinology-bg.jpg",
+        "#category6": "Images/PRODUCTS/rdt-bg.jpg",
+        "#category7": "Images/PRODUCTS/surgical-bg.jpg",
+        "#category8": "Images/PRODUCTS/equipment-bg.jpg",
+        "#category9": "Images/PRODUCTS/opthalmic-bg.jpg",
+        "#category10": "Images/PRODUCTS/sanitation-bg.jpg",
+        "#category11": "Images/PRODUCTS/orthopedic-bg.jpg",
+        "#category12": "Images/PRODUCTS/protein-bg.jpg",
+        "#category13": "Images/PRODUCTS/general-bg.jpg"
+    };
+
+    // Preload all images
+    for (const img of Object.values(categories)) {
+        const preload = new Image();
+        preload.src = img;
+    }
+
+    for (const [id, img] of Object.entries(categories)) {
+        const toggle = document.querySelector(`[data-target="${id}"]`);
+        const section = document.querySelector(id);
+
+        if (toggle && section) {
+            toggle.addEventListener("click", function () {
+                const isOpen = section.classList.contains("show");
+
+                // Just switch background instantly
+                if (!isOpen) {
+                    pageBg.style.backgroundImage = `url('${img}')`;
+                } else {
+                    pageBg.style.backgroundImage = "url('Images/bg.jpg')"; // back to default
+                }
+            });
+        }
+    }
+});
+
+</script>
+
+
 
 </body>
 </html>

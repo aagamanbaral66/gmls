@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <title>Home</title>
-    <link rel="icon" type="image/png" href="Images/global.png" />
+    <link rel="icon" type="image/png" href="../Images/global.png" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -11,60 +11,37 @@
 </head>
 <body>
 
-<!-- Header -->
-<div class="container-fluid header">
-    <div class="row align-items-center">
-        <div class="col-md-6 col-md-6_logo">
-            <!-- Logo -->
-            <a href="home.html"><img src="Images\global.png" alt="Global Logo"></a>
-        </div>
-        <div class="col-md-6 text-right">
-            <!-- Text to the right of the logo -->
-            <h1 class="header-text"></h1>
-        </div>
-    </div>
-</div>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light navigation">
+<nav class="navbar navbar-expand-lg navbar-light bg-light navigation">
     <div class="container">
-        <!-- Left Navigation Items -->
-        <div class="navbar-nav-left">
-            <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <a class="navbar-brand d-lg-none" href="#">Menu</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-                <!-- Dropdown Menu -->
-                <!-- <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Services
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Service 1</a>
-                        <a class="dropdown-item" href="#">Service 2</a>
-                        <a class="dropdown-item" href="#">Service 3</a>
-                    </div>
-                </li> -->
+        <div class="collapse navbar-collapse justify-content-between" id="navbarContent">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="../">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="../products.html">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="../contact.html">Contact</a></li>
             </ul>
-        </div>
-
-        <!-- Right Navigation Items -->
-        <div class="navbar-nav-right ml-auto">
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-                <li class="nav-item"><a class="nav-link" href="abc.html">Our Team</a></li>
-                <li class="nav-item"><a class="nav-link" href="xyz.html">XYZ</a></li>
+                <li class="nav-item"><a class="nav-link" href="../gallery.html">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" href="../team.html">Our Team</a></li>
+                <li class="nav-item"><a class="nav-link" href="../xyz.html">XYZ</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
-<div class="container-fluid main-content">
+<div class="info">
+    <div class="container-fluid main-content">
     <div class="container">
         <div class="row">
-            
+                
         </div>
     </div>
 </div>
@@ -85,8 +62,9 @@
         </div>
     </div>
 </div>
+</div>
 <div class="text-center copyright">
-    <p>Copyright © 2025 Global Medilab & Surgical Pvt. Ltd | Designed by [Aagaman Baral]</p>
+    <p>Copyright © 2025 Global Medilab & Surgical Pvt. Ltd | Assembled by [Aagaman Baral]</p>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

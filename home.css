@@ -1,3 +1,5 @@
+/* styles.css */
+
 /* Global Styles */
 *,
 *::before,
@@ -9,11 +11,8 @@ body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #17518b; /* Very light blue */
+  background-color: #17518b;
   color: #333;
-}
-.main-content{
-  background-color: #0056b3;
 }
 
 /* Header */
@@ -25,11 +24,12 @@ body {
 }
 
 .header-text {
-  font-size: 24px;
+  font-size: 32px;
   font-weight: bold;
   color: #333;
   margin: 0;
   text-align: center;
+  text-transform: uppercase;
 }
 
 /* Logo */
@@ -41,7 +41,7 @@ body {
 
 /* Navbar */
 .navigation {
-  background: #57ba54;
+  background: #ffffff;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
   padding: 12px 0;
   display: flex;
@@ -66,6 +66,13 @@ body {
 .navbar-nav-left .nav-item .nav-link:hover,
 .navbar-nav-right .nav-item .nav-link:hover {
   color: #0056b3;
+}
+.navbar-nav .nav-link {
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+.navbar-nav .nav-link:hover {
+    color: #007bff;
 }
 
 /* Dropdown Menu */
@@ -105,6 +112,12 @@ body {
   background-color: #57ba54;
   color: #a7241a;
 }
+.navbar-nav .nav-link {
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+}
+
 
 /* GALLERY */
 .grid-gallery {
@@ -170,14 +183,72 @@ body {
   text-decoration: none;
 }
 
+
+/* PRODUCTS */
+
+
 /* Main Content */
 .main-content {
   padding: 60px 0;
+  background: #ffffff;
+  border-radius: 15px;
 }
+.about__content {
+  padding: 60px 0;
+  border-radius: 15px;
+  margin: 0;
+  background: linear-gradient(135deg, #8CC2FF 0%, #ffffff 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.accordion {
+  cursor: pointer;
+}
+
+#productPage {
+    transition: background-image 0.6s ease-in-out;
+    /* To help with the fade, we'll also add: */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.card-body {
+  cursor: auto;
+}
+
+.col-md-3 img{
+  width: 100%;
+  max-width: 300px;
+  height: 200px;
+  object-fit:fill;
+  display: block;
+  margin: auto;
+  border-radius: 10px;
+
+  /* 👇 Make image rendering smooth (anti-aliased) */
+  image-rendering:optimizeQuality
+}
+
+.products__content {
+    padding: 60px 0;
+    border-radius: 15px;
+    background-image: url('Images/bg.jpg'); /* default image */
+    background-position: center center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    transition: background-image 0.5s ease-in-out, background-size 0.5s ease-in-out;
+}
+
+
+
 
 .mission,
 .quality {
-  background: #8cc2ff;
+  background: #ffffff;
   padding: 25px;
   border-radius: 15px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
@@ -190,6 +261,15 @@ body {
   color: #007bff;
 }
 
+.text__size {
+  font-size: 3.1rem;
+}
+
+.title {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
 /* Products Page */
 .pics img {
   width: 100%;
@@ -270,7 +350,7 @@ body {
 
 /* Footer */
 .footer {
-  background:  #f1f1f1;
+  background: #f1f1f1;
   color: #333;
   padding: 30px 0;
   border-radius: 15px 15px 0 0;
@@ -285,8 +365,7 @@ body {
   color: #0056b3;
 }
 
-
-/* Media Queries for Mobile */
+/* Media Queries */
 @media (max-width: 768px) {
   .header-text {
     font-size: 18px;
@@ -318,48 +397,110 @@ body {
 }
 
 .team-photo {
-    width: 100%;
-    max-width: 180px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 4px solid #57ba54;
-    margin-bottom: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #57ba54;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-  
+
 h5 {
-    margin-top: 10px;
-    font-weight: 600;
-    color: #333;
+  margin-top: 10px;
+  font-weight: 600;
+  color: #333;
 }
-  
+
 p {
-    color: #666;
-    font-size: 14px;
+  color: #666;
+  font-size: 14px;
 }
 
 /* Team Section */
 .team-section {
-    margin: 40px 0;
+  margin: 40px 0;
 }
 
 .team-member {
-    text-align: center;
-    margin-bottom: 30px;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 .team-member h5 {
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 10px;
-    color: #333;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #333;
 }
 
 .team-member p {
-    font-size: 14px;
-    color: #777;
+  font-size: 14px;
+  color: #777;
 }
+
+/* Gallery item with fixed aspect ratio (square here) */
+.gallery-item {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* 1:1 aspect ratio (square) — change to 75% for 4:3 */
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ensures image covers entire box */
+    object-position: center;
+}
+
+.gallery-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Optional: Lightbox styling */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1050;
+    padding: 2rem;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.85);
+    text-align: center;
+}
+
+.lightbox:target {
+    display: block;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90vh;
+    margin: auto;
+}
+
+.lightbox .close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    color: #fff;
+    text-decoration: none;
+}
+
+
 /* Copyright Section */
 .copyright {
   background: #222;
@@ -367,3 +508,27 @@ p {
   padding: 15px;
   text-align: center;
 }
+
+
+
+
+.img-fluid {
+    max-height: 200px;
+    object-fit: contain;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .col-md-3 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 576px) {
+    .col-md-3 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+/* Responsive adjustments for the header */
