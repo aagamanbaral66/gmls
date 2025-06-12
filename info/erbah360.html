@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Erba H360</title>
+    <link rel="icon" type="image/png" href="../Images/global.png" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../home.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .navigation {
+            background: rgba(248, 249, 250, 0.95) !important;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            padding: 0.8rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navigation .nav-link {
+            color: #2c3e50 !important;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .navigation .nav-link:hover {
+            color: #e74c3c !important;
+        }
+
+        .navigation .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background-color: #e74c3c;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .navigation .nav-link:hover::after {
+            width: 80%;
+        }
+    .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer h5 {
+            color: #e74c3c;
+            margin-bottom: 1rem;
+        }
+
+        .footer a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #e74c3c;
+            text-decoration: none;
+        }
+
+        .copyright {
+            background: #1a252f;
+            color: #95a5a6;
+            padding: 1rem 0;
+            text-align: center;
+        }
+</style>
+     <style>
+    
+
+    .breadcrumb {
+      margin-bottom: 15px;
+    }
+
+    .breadcrumb a {
+      text-decoration: none;
+      color: #007BFF;
+    }
+
+    .breadcrumb span {
+      margin: 0 5px;
+    }
+
+    .product-page {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .photo-gallery {
+      flex: 1 1 300px;
+    }
+
+    .main-image img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-bottom: 10px;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .thumbnails {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .thumbnails img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 5px;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: border 0.3s, transform 0.3s;
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+        backface-visibility: hidden;
+        transform: translateZ(0);
+    }
+
+
+    .thumbnails img:hover {
+      border: 2px solid #007BFF;
+      transform: scale(1.05);
+    }
+
+    .product-details {
+      flex: 2 1 300px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .product-details h1 {
+      margin-top: 0;
+    }
+
+    .product-details button {
+      padding: 10px 20px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+     .inquiry-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #25D366; /* WhatsApp green */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .inquiry-button:hover {
+    background-color: #128C4A;
+  }
+
+    /* Responsive Behavior */
+    @media (max-width: 768px) {
+      .product-page {
+        flex-direction: column;
+      }
+
+      .thumbnails {
+        justify-content: center;
+      }
+    }
+  .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer h5 {
+            color: #e74c3c;
+            margin-bottom: 1rem;
+        }
+
+        .footer a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #e74c3c;
+            text-decoration: none;
+        }
+
+        .copyright {
+            background: #1a252f;
+            color: #95a5a6;
+            padding: 1rem 0;
+            text-align: center;
+        }
+</style>
+</head>
+<body>
+
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light navigation">
+    <div class="container">
+        <a class="navbar-brand d-lg-none" href="#">Menu</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-between" id="navbarContent">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="../">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="../../products.html">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="../contact.html">Contact</a></li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="../gallery.html">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" href="../team.html">Our Team</a></li>
+                <!-- <li class="nav-item"><a class="nav-link" href="../xyz.html">XYZ</a></li> -->
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="info">
+    <div class="container-fluid main-content">
+    <div class="container">
+        <div class="row">
+                <nav class="breadcrumb" style="font-family: Arial; font-size: 14px;">
+                <a href="../" style="text-decoration: none; color: #007BFF;">Home</a> &gt; 
+                <a href="../products.html" style="text-decoration: none; color: #007BFF;">Products</a> &gt; 
+                <a href="#" style="text-decoration: none; color: #555;">Erba H360</a>
+                </nav>
+
+
+                            <!-- Product Page -->
+                            <div class="product-page">
+                                <!-- Photo Gallery -->
+                                <div class="photo-gallery">
+                                <div class="main-image">
+                                    <img id="mainImage" src="https://www.biolinediagnostics.com/wp-content/uploads/2022/09/BH-360.png" alt="Main Product Image" />
+                                </div>
+                                <div class="thumbnails">
+                                    <img src="../Images/Products/bh360.png" alt="Thumb 1" onclick="changeImage('https://www.biolinediagnostics.com/wp-content/uploads/2022/09/BH-360.png')" />
+                                </div>
+                                </div>
+
+                                <!-- Product Details -->
+                                <div class="product-details">
+                                <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-bottom: 20px;">Erba H360  </h1>
+                                <h4 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-bottom: 20px;">Automated 3-Part differential hematology analyzer</h4>
+                                <ol type="1">
+                                    <li><p style="font-family: 'Times New Roman', Times, serif; font-size: large;">
+                                        Complete blood count analyser for small laboratories or use as a second instrument
+                                    </p></li>
+                                    
+                                    <li><p style="font-family: 'Times New Roman', Times, serif; font-size: large;">
+                                        22 Reportable parameters including P-LCC, P-LCR
+                                    </p></li>
+                                    
+                                    <li><p style="font-family: 'Times New Roman', Times, serif; font-size: large;">
+                                        Electrical impedance method for Cell count
+                                    </p></li>
+                                    
+                                    <li><p style="font-family: 'Times New Roman', Times, serif; font-size: large;">
+                                        Cyanide free reagent for Haemoglobin test
+                                    </p></li>
+                                    
+                                    <li><p style="font-family: 'Times New Roman', Times, serif; font-size: large;">
+                                        9 μl sample volume
+                                    </p></li>
+                                    
+                                    <li><p style="font-family: 'Times New Roman', Times, serif; font-size: large;">
+                                        Large coloured LCD touch screen of 10.4 inch
+                                    </p></li>
+                                    
+                                    <li><p style="font-family: 'Times New Roman', Times, serif; font-size: large;">
+                                        Throughput 60 samples/hour
+                                    </p></li>
+                                    
+                                    <li><p style="font-family: 'Times New Roman', Times, serif; font-size: large;">
+                                        3 counting modes - Whole blood, Capillary and Pre-dilution
+                                    </p></li>
+                                    
+                                    <li><p style="font-family: 'Times New Roman', Times, serif; font-size: large;">
+                                        Large storage capacity of 50,000 samples
+                                    </p></li>
+                                </ol>
+
+
+                                <!-- <p><strong>Price:</strong> $99.99</p>
+                                <button>Add to Cart</button> -->
+                                <div style="margin-top: 20px;">
+                                    <input type="text" id="userName" placeholder="Your Name" style="padding: 8px; width: 100%; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                                    <input type="text" id="organizationName" placeholder="Organization Name" style="padding: 8px; width: 100%; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                                    <input type="text" id="userAddress" placeholder="Address" style="padding: 8px; width: 100%; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                                    <button class="inquiry-button" onclick="sendWhatsApp()">Enquire</button>
+                                </div>
+
+
+                                </div>
+                            </div>
+
+                            <script>
+                                function changeImage(src) {
+                                const mainImage = document.getElementById('mainImage');
+                                mainImage.style.opacity = 0;
+                                setTimeout(() => {
+                                    mainImage.src = src;
+                                    mainImage.style.opacity = 1;
+                                }, 200);
+                                }
+                            </script>
+                            <script>
+                                function sendWhatsApp() {
+                                    const name = document.getElementById('userName').value.trim();
+                                    const organization = document.getElementById('organizationName').value.trim();
+                                    const address = document.getElementById('userAddress').value.trim();
+
+                                    if (name === '' || organization === '' || address === '') {
+                                        alert('Please enter your Name, Organization Name, and Address.');
+                                        return;
+                                    }
+
+                                    const message = `Hello, I am ${name} from ${organization} from ${address}. I'd like to enquire about Erba H360.`;
+                                    const phoneNumber = '9779852670594';
+                                    const encodedMessage = encodeURIComponent(message);
+                                    const whatsappURL = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
+
+                                    window.open(whatsappURL, '_blank');
+                                }
+                            </script>
+
+                            <script>
+                                function sendWhatsApp() {
+                                    const name = document.getElementById('userName').value.trim();
+                                    const organization = document.getElementById('organizationName').value.trim();
+                                    const address = document.getElementById('userAddress').value.trim();
+
+                                    if (name === '' || organization === '' || address === '') {
+                                        alert('Please enter your Name, Organization Name, and Address.');
+                                        return;
+                                    }
+
+                                    const message = `Hello, I am ${name} from ${organization} from ${address}. I'd like to enquire about Bioline BH 360.`;
+                                    const phoneNumber = '9779852670594';
+                                    const encodedMessage = encodeURIComponent(message);
+                                    const whatsappURL = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
+
+                                    window.open(whatsappURL, '_blank');
+                                }
+                            </script>
+
+
+
+        </div>
+    </div>
+</div>  
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <h5>Global Medilab & Surgical</h5>
+                <p>Leading provider of medical equipment and laboratory solutions in Nepal. Committed to advancing healthcare through innovative technology.</p>
+            </div>
+            
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="../">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h5>Services</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Installation</a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#">Maintenance</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 mb-4">
+                <h5>Contact Info</h5>
+                <p><strong>Address:</strong> Damak-6, Jhapa, Nepal</p>
+                <p><strong>Phone:</strong> 023575635, 9842632512</p>
+                <p><strong>Email:</strong> gmlsdmk@gmail.com</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="copyright">
+    <div class="container">
+        <p>Copyright © 2025 Global Medilab & Surgical Pvt. Ltd | Assembled by [Aagaman Baral]</p>
+    </div>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
