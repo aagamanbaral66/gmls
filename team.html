@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Our Team - Global Medilab & Surgical Pvt. Ltd</title>
+    <link rel="icon" type="image/png" href="Images/global.png" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .navigation {
+            background: rgba(248, 249, 250, 0.95) !important;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            padding: 0.8rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navigation .nav-link {
+            color: #2c3e50 !important;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .navigation .nav-link:hover {
+            color: #e74c3c !important;
+        }
+
+        .navigation .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background-color: #e74c3c;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .navigation .nav-link:hover::after {
+            width: 80%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.1)" points="0,1000 1000,0 1000,1000"/></svg>');
+            background-size: cover;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        /* Floating animation */
+        .floating-element {
+            position: absolute;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-element:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+        .floating-element:nth-child(2) { top: 60%; right: 15%; animation-delay: 2s; }
+        .floating-element:nth-child(3) { bottom: 20%; left: 20%; animation-delay: 4s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Team Cards */
+        .team-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            height: 100%;
+            border: 1px solid #f8f9fa;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(103, 126, 234, 0.1), transparent);
+            transition: all 0.6s ease;
+        }
+
+        .team-card:hover::before {
+            left: 100%;
+        }
+
+        .team-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+        }
+
+        .team-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            object-fit: cover;
+            border: 5px solid #f8f9fa;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .team-card:hover .team-photo {
+            border-color: #e74c3c;
+            transform: scale(1.1);
+        }
+
+        .team-card h5 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 1.3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .team-card p {
+            color: #7f8c8d;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Leadership Section */
+        .leadership-section {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        }
+
+        .leadership-card {
+            background: white;
+            border-radius: 25px;
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            height: 100%;
+            border: 1px solid #e9ecef;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .leadership-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+
+        .leadership-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+        }
+
+        .leadership-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            object-fit: cover;
+            border: 6px solid #fff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .leadership-card:hover .leadership-photo {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .leadership-card h4 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .leadership-card .position {
+            color: #e74c3c;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Team Stats */
+        .team-stats {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #e74c3c;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer h5 {
+            color: #e74c3c;
+            margin-bottom: 1rem;
+        }
+
+        .footer a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #e74c3c;
+            text-decoration: none;
+        }
+
+        .copyright {
+            background: #1a252f;
+            color: #95a5a6;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+
+            .team-photo {
+                width: 120px;
+                height: 120px;
+            }
+
+            .leadership-photo {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer h5 {
+            color: #e74c3c;
+            margin-bottom: 1rem;
+        }
+
+        .footer a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #e74c3c;
+            text-decoration: none;
+        }
+
+        .copyright {
+            background: #1a252f;
+            color: #95a5a6;
+            padding: 1rem 0;
+            text-align: center;
+        }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light navigation">
+    <div class="container">
+        <a class="navbar-brand d-lg-none" href="#">Menu</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-between" id="navbarContent">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="../">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" href="team.html">Our Team</a></li>
+                <!-- <li class="nav-item"><a class="nav-link" href="xyz.html">XYZ</a></li> -->
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="floating-element">👥</div>
+    <div class="floating-element">🏆</div>
+    <div class="floating-element">💼</div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-12 hero-content">
+                <h1>Meet Our Expert Team</h1>
+                <p>Dedicated professionals committed to advancing healthcare through innovation and excellence</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Leadership Section -->
+<section class="leadership-section section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Our Leadership</h2>
+            <p>Visionary leaders driving our mission forward</p>
+        </div>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-5 col-md-6 mb-4">
+                <div class="leadership-card">
+                    <img src="Images/WhatsApp_Image_2025-04-14_at_21.59.05_24d4b298.png" alt="Sujata Poudel" class="leadership-photo">   
+                    <h4>Sujata Poudel</h4>
+                    <div class="position">Chief Executive Officer</div>
+                    <p>Leading Global Medilab with strategic vision and commitment to healthcare excellence across Nepal.</p>
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-6 mb-4">
+                <div class="leadership-card">
+                    <img src="Images/badri_baral-removebg-preview.png" alt="Badri Baral" class="leadership-photo">
+                    <h4>Badri Baral</h4>
+                    <div class="position">Managing Director</div>
+                    <p>Overseeing operations and ensuring quality delivery of medical solutions to healthcare providers.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Team Stats -->
+<section class="team-stats section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-item">
+                    <span class="stat-number">7</span>
+                    <div class="stat-label">Team Members</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-item">
+                    <span class="stat-number">15+</span>
+                    <div class="stat-label">Years Combined Experience</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-item">
+                    <span class="stat-number">200+</span>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-item">
+                    <span class="stat-number">24/7</span>
+                    <div class="stat-label">Dedicated Support</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Team Members Section -->
+<section class="section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Our Professional Team</h2>
+            <p>Skilled professionals dedicated to your success</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="team-card">
+                    <img src="Images/sp-removebg-preview.png" alt="Gunja Phuyal" class="team-photo">
+                    <h5>Gunja (Shiva) Bdr Phuyal</h5>
+                    <p>Marketing Officer</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="team-card">
+                    <img src="Images/deepa-removebg-preview.png" alt="Deepa Rai" class="team-photo">
+                    <h5>Deepa Rai</h5>
+                    <p>Business Officer</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="team-card">
+                    <img src="Images/krr-removebg-preview.png" alt="Khem Raj Regmi" class="team-photo">
+                    <h5>Khem Raj Regmi</h5>
+                    <p>Marketing Specialist</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="team-card">
+                    <img src="Images/mmm.png" alt="Min Saru Magar" class="team-photo">
+                    <h5>Min Saru Magar</h5>
+                    <p>Marketing Specialist</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="team-card">
+                    <img src="https://static.wikia.nocookie.net/universalstudios/images/f/f2/Shrek2-disneyscreencaps.com-4369.jpg/revision/latest?cb=20250224023204" alt="Aagaman Baral" class="team-photo">
+                    <h5>Aagaman Baral</h5>
+                    <p>Full Stack Developer</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="team-card">
+                    <img src="Images/shreya-removebg-preview.png" alt="Shreya Kisku" class="team-photo">
+                    <h5>Shreya Kisku</h5>
+                    <p>Intern</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<!-- <section class="section" style="background: linear-gradient(135deg, #667eea, #764ba2); color: white;">
+    <div class="container text-center">
+        <h2 style="color: white; margin-bottom: 1rem;">Join Our Growing Team</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem; color: rgba(255,255,255,0.9);">
+            We're always looking for talented individuals passionate about healthcare innovation
+        </p>
+        <a href="contact.html" class="btn btn-outline-light btn-lg" style="border-radius: 50px; padding: 12px 30px;">
+            Get In Touch
+        </a>
+    </div>
+</section> -->
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <h5>Global Medilab & Surgical</h5>
+                <p>Leading provider of medical equipment and laboratory solutions in Nepal. Committed to advancing healthcare through innovative technology.</p>
+            </div>
+            
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="../">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h5>Services</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Installation</a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#">Maintenance</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 mb-4">
+                <h5>Contact Info</h5>
+                <p><strong>Address:</strong> Damak-6, Jhapa, Nepal</p>
+                <p><strong>Phone:</strong> 023575635, 9842632512</p>
+                <p><strong>Email:</strong> gmlsdmk@gmail.com</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="copyright">
+    <div class="container">
+        <p style="color: white;">Copyright © 2025 Global Medilab & Surgical Pvt. Ltd | Assembled by [Aagaman Baral]</p>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+// Counter animation for stats
+function animateCounters() {
+    const counters = document.querySelectorAll('.stat-number');
+    
+    counters.forEach(counter => {
+        const target = parseInt(counter.innerText.replace(/\D/g, ''));
+        const increment = target / 50;
+        let current = 0;
+        
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                counter.innerText = counter.innerText.includes('+') ? target + '+' : 
+                                  counter.innerText.includes('/') ? '24/7' : target;
+                clearInterval(timer);
+            } else {
+                counter.innerText = Math.floor(current);
+            }
+        }, 40);
+    });
+}
+
+// Trigger counter animation when stats section is visible
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            animateCounters();
+            observer.unobserve(entry.target);
+        }
+    });
+});
+
+const statsSection = document.querySelector('.team-stats');
+if (statsSection) {
+    observer.observe(statsSection);
+}
+
+// Add scroll effect to navbar
+window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navigation');
+    if (window.scrollY > 50) {
+        navbar.style.background = 'rgba(248, 249, 250, 0.98)';
+    } else {
+        navbar.style.background = 'rgba(248, 249, 250, 0.95)';
+    }
+});
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// Add stagger animation to team cards
+const teamCards = document.querySelectorAll('.team-card, .leadership-card');
+teamCards.forEach((card, index) => {
+    card.style.animationDelay = `${index * 0.1}s`;
+    card.style.animation = 'fadeInUp 0.8s ease-out forwards';
+});
+</script>
+
+</body>
+</html>
