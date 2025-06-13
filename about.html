@@ -13,11 +13,11 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
+            background: whitesmoke;
         }
 
         .navigation {
@@ -123,7 +123,7 @@
 
         /* Content Cards */
         .content-card {
-            background: white;
+            background: #faf9f6;
             border-radius: 15px;
             padding: 2.5rem;
             margin-bottom: 2rem;
@@ -170,7 +170,7 @@
 
         /* MD Message Special Styling */
         .md-message {
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            background: linear-gradient(135deg, #c9cdd1, #ffffff);
             border-left: 5px solid #e74c3c;
         }
 
@@ -260,8 +260,32 @@
                 padding: 60px 0;
             }
         }
-    
+      /* Core Values Cards */
+        .values-card::before {
+            background: linear-gradient(45deg, #ffffff, #f8f9fa);
+            opacity: 0.1;
+        }
 
+        .values-card h3 {
+            color: white;
+        }
+
+        .values-card h3::after {
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .values-card p {
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .values-card:nth-child(2) .content-card {
+            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+        }
+
+        .values-card:nth-child(3) .content-card {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+        }
+        
 </style>
 </head>
 <body>
@@ -322,7 +346,7 @@
 </section>
 
 <!-- MD Message Section -->
-<section class="section" style="background: #f8f9fa;">
+<section class="section" style="background: whitesmoke;">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-10">
@@ -343,7 +367,6 @@
     </div>
 </section>
 
-<!-- Our Values Section -->
 <section class="section">
     <div class="container">
         <div class="section-title">
@@ -351,7 +374,7 @@
             <p style="font-size: large;">The principles that guide everything we do</p>
         </div>
         
-        <div class="row">
+        <div class="row values-card">
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="content-card">
                     <h3>Excellence</h3>
