@@ -1,13 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Global Medilab & Surgical Pvt. Ltd</title>
+    <title>Gallery - Global Medilab & Surgical Pvt. Ltd</title>
     <link rel="icon" type="image/png" href="Images/global.png" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
+        /* CSS from index.html */
+        .scroll-text {
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        .scroll-inner {
+            display: inline-block;
+            padding-left: 100%;
+            animation: scroll-left 25s linear infinite;
+            font-size: 2rem; /* adjust as you like */
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .highlight {
+            color: #9e0808;
+            font-weight: bold;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -18,6 +39,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
+            background: #f8f9ff;
         }
 
         .navigation {
@@ -60,11 +82,12 @@
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 80vh;
+            min-height: 40vh; /* Adjusted for gallery page */
             display: flex;
             align-items: center;
             position: relative;
             overflow: hidden;
+            color: white; /* Ensure text is white on hero background */
         }
 
         .hero::before {
@@ -186,9 +209,9 @@
             margin: 0 auto;
         }
 
-        /* Product Categories */
+        /* Product Categories (repurposed for 'Why Choose Us' and similar cards if needed) */
         .category-card {
-            background: white;
+            background: rgb(255, 255, 255);
             border-radius: 15px;
             padding: 2rem;
             text-align: center;
@@ -201,6 +224,7 @@
         .category-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            background: whitesmoke;
         }
 
         .category-icon {
@@ -333,12 +357,185 @@
 
         .copyright {
             background: #1a252f;
-            color: #95a5a6;
+            color: #95a5a6; /* Adjusted from index.html for better visibility */
             padding: 1rem 0;
             text-align: center;
         }
+        
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(0%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
 
-        /* Responsive Design */
+        /* Gallery specific styles, adjusted for consistency */
+        .filter-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: #667eea; /* Primary color from index hero gradient */
+            color: #fff;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #e74c3c; /* Accent color from index buttons */
+            color: #fff;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            padding-bottom: 3rem; /* Add some space at the bottom */
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            cursor: pointer;
+            border: 1px solid #f0f0f0; /* Subtle border for definition */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px; /* Fixed height for consistent grid */
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.03);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.4)); /* Darker overlay */
+            color: #fff;
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-overlay h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+            color: #e74c3c; /* Accent color */
+        }
+
+        .gallery-overlay p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Load More */
+        .load-more {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .load-more-btn {
+            background: linear-gradient(45deg, #e74c3c, #c0392b); /* Primary button style */
+            color: #fff;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 50px; /* More rounded like index buttons */
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+        }
+
+        .load-more-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.6);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.9); /* Darker overlay */
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+            background: white; /* Add a background to the content itself */
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .modal img {
+            width: 100%;
+            max-height: 70vh; /* Limit image height in modal */
+            object-fit: contain;
+            border-radius: 8px;
+            display: block;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #e74c3c; /* Accent color for close button */
+            color: #fff;
+            border: none;
+            width: 40px;
+            height: 40px;
+            font-size: 1.5rem;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background: #c0392b; /* Darker accent on hover */
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
@@ -348,49 +545,14 @@
                 font-size: 1.1rem;
             }
             
-            .hero-buttons .btn {
-                display: block;
-                width: 100%;
-                margin: 10px 0;
-            }
-            
             .section {
                 padding: 60px 0;
             }
         }
-    .footer {
-            background: #2c3e50;
-            color: white;
-            padding: 3rem 0 1rem;
-        }
-
-        .footer h5 {
-            color: #e74c3c;
-            margin-bottom: 1rem;
-        }
-
-        .footer a {
-            color: #bdc3c7;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer a:hover {
-            color: #e74c3c;
-            text-decoration: none;
-        }
-
-        .copyright {
-            background: #1a252f;
-            color: #95a5a6;
-            padding: 1rem 0;
-            text-align: center;
-        }
-</style>
+    </style>
 </head>
 <body>
 
-<!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light navigation">
     <div class="container">
         <a class="navbar-brand d-lg-none" href="#">Menu</a>
@@ -401,7 +563,7 @@
 
         <div class="collapse navbar-collapse justify-content-between" id="navbarContent">
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="../">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
@@ -409,250 +571,88 @@
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
                 <li class="nav-item"><a class="nav-link" href="team.html">Our Team</a></li>
-                <!-- <li class="nav-item"><a class="nav-link" href="xyz.html">XYZ</a></li> -->
-            </ul>
+                </ul>
         </div>
     </div>
 </nav>
 
-<!-- Hero Section -->
-<section class="hero">
-    <div class="floating-element">🧪</div>
-    <div class="floating-element">🔬</div>
-    <div class="floating-element">🏥</div>
-    
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-8 hero-content">
-                <h1>Advanced Medical Solutions for Better Healthcare</h1>
-                <p>Your trusted partner in medical equipment and laboratory solutions. We provide cutting-edge diagnostic equipment, surgical instruments, and comprehensive support services across Nepal.</p>
-                <div class="hero-buttons">
-                    <a href="products.html" class="btn btn-primary-custom">View Products</a>
-                    <a href="contact.html" class="btn btn-outline-custom">Get Quote</a>
-                </div>
+<main>
+    <section class="hero text-center"> <div class="container">
+            <div class="hero-content">
+                <h1>Our Gallery</h1>
+                <p>Explore our collection of stunning visuals and memorable moments</p>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Product Categories -->
-<section class="section">
-    <div class="container">
-        <div class="section-title">
-            <h2>Our Product Categories</h2>
-            <p>Comprehensive range of medical equipment and laboratory solutions for healthcare professionals</p>
-        </div>
-        
-        <div class="row">
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="category-card">
-                    <div class="category-icon">🩸</div>
-                    <h4>Haematology</h4>
-                    <p>3-Part, 5-Part, and 6-Part blood analyzers from leading manufacturers</p>
-                    <a href="products.html#category1" class="btn btn-outline-primary">Learn More</a>
-                </div>
+    <section class="section"> <div class="container">
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="projects">Projects</button>
+                <button class="filter-btn" data-filter="events">Events</button>
+                <button class="filter-btn" data-filter="team">Team</button>
+                <button class="filter-btn" data-filter="facilities">Facilities</button>
             </div>
-            
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="category-card">
-                    <div class="category-icon">🧪</div>
-                    <h4>Biochemistry</h4>
-                    <p>Semi-automatic and fully automatic clinical chemistry analyzers</p>
-                    <a href="products.html#category2" class="btn btn-outline-primary">Learn More</a>
-                </div>
-            </div>
-            
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="category-card">
-                    <div class="category-icon">🔬</div>
-                    <h4>Immunology & Endocrinology</h4>
-                    <p>Advanced immunoassay and hormone testing equipment</p>
-                    <a href="products.html#category3" class="btn btn-outline-primary">Learn More</a>
-                </div>
-            </div>
-            
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="category-card">
-                    <div class="category-icon">🦠</div>
-                    <h4>Microbiology</h4>
-                    <p>Bacterial culture and identification systems</p>
-                    <a href="products.html#category4" class="btn btn-outline-primary">Learn More</a>
-                </div>
-            </div>
-            
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="category-card">
-                    <div class="category-icon">🔪</div>
-                    <h4>Surgical Instruments</h4>
-                    <p>High-quality surgical tools and equipment</p>
-                    <a href="products.html#category7" class="btn btn-outline-primary">Learn More</a>
-                </div>
-            </div>
-            
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="category-card">
-                    <div class="category-icon">🏥</div>
-                    <h4>Medical Equipment</h4>
-                    <p>General medical devices and diagnostic equipment</p>
-                    <a href="products.html#category8" class="btn btn-outline-primary">Learn More</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-<!-- Stats Section -->
-<section class="stats-section section">
-    <div class="container">
-        <h1 style="font-family:Verdana, Geneva, Tahoma, sans-serif; font-style:inherit;">More Than:</h1>
-        <div class="row">
-            <div class="col-lg-3 col-md-6">
-                <div class="stat-item">
-                    <span class="stat-number">500+</span>
-                    <div class="stat-label">Equipments Installed</div>
+            <div class="gallery" id="gallery">
+                <div class="gallery-item" data-category="projects">
+                    <img src="https://via.placeholder.com/400x250/667eea/ffffff?text=Project+Image+1" alt="Project Image 1">
+                    <div class="gallery-overlay">
+                        <h3>Project Alpha</h3>
+                        <p>Successful installation of advanced lab equipment.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="stat-item">
-                    <span class="stat-number">15</span>
-                    <div class="stat-label">Years Experience</div>
+                <div class="gallery-item" data-category="events">
+                    <img src="https://via.placeholder.com/400x250/e74c3c/ffffff?text=Event+Image+1" alt="Event Image 1">
+                    <div class="gallery-overlay">
+                        <h3>Medical Expo 2024</h3>
+                        <p>Showcasing our latest innovations.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="stat-item">
-                    <span class="stat-number">200+</span>
-                    <div class="stat-label">Happy Clients</div>
+                <div class="gallery-item" data-category="team">
+                    <img src="https://via.placeholder.com/400x250/2c3e50/ffffff?text=Team+Photo+1" alt="Team Photo 1">
+                    <div class="gallery-overlay">
+                        <h3>Our Dedicated Team</h3>
+                        <p>Working together for better healthcare.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="stat-item">
-                    <span class="stat-number">24/7</span>
-                    <div class="stat-label">Support Service</div>
+                <div class="gallery-item" data-category="facilities">
+                    <img src="https://via.placeholder.com/400x250/764ba2/ffffff?text=Facility+Image+1" alt="Facility Image 1">
+                    <div class="gallery-overlay">
+                        <h3>Our Modern Office</h3>
+                        <p>Equipped to serve you better.</p>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
+                <div class="gallery-item" data-category="projects">
+                    <img src="https://via.placeholder.com/400x250/667eea/ffffff?text=Project+Image+2" alt="Project Image 2">
+                    <div class="gallery-overlay">
+                        <h3>Hospital Renovation</h3>
+                        <p>Providing essential medical supplies.</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="events">
+                    <img src="https://via.placeholder.com/400x250/e74c3c/ffffff?text=Event+Image+2" alt="Event Image 2">
+                    <div class="gallery-overlay">
+                        <h3>Health Workshop</h3>
+                        <p>Educating on new diagnostic methods.</p>
+                    </div>
+                </div>
+                </div>
 
-<!-- Partners Section -->
-<section class="partners-section section">
-    <div class="container">
-        <div class="section-title">
-            <h2>Our Trusted Partners</h2>
-            <p>We represent leading global manufacturers in medical equipment</p>
-        </div>
-        
-        <div class="row justify-content-center">
-            <div class="col-lg-2 col-md-3 col-6">
-                <div class="partner-logo">
-                    <span style="font-weight: bold; color: #667eea;">AGAPPE</span>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-3 col-6">
-                <div class="partner-logo">
-                    <span style="font-weight: bold; color: #e74c3c;">BIOLINE</span>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-3 col-6">
-                <div class="partner-logo">
-                    <span style="font-weight: bold; color: #27ae60;">ERBA</span>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-3 col-6">
-                <div class="partner-logo">
-                    <span style="font-weight: bold; color: #f39c12;">AVANTOR</span>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-3 col-6">
-                <div class="partner-logo">
-                    <span style="font-weight: bold; color: #9b59b6;">TOSOH</span>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-3 col-6">
-                <div class="partner-logo">
-                    <span style="font-weight: bold; color: #34495e;">BODITECH</span>
-                </div>
+            <div class="load-more">
+                <button class="load-more-btn" id="loadMoreBtn">Load More</button>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+</main>
 
-<!-- Why Choose Us -->
-<section class="section">
-    <div class="container">
-        <div class="section-title">
-            <h2>Why Choose Global Medilab?</h2>
-            <p>Your success is our commitment</p>
-        </div>
-        
-        <div class="row">
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="category-card">
-                    <div class="category-icon">✅</div>
-                    <h4>Authorized Dealer</h4>
-                    <p>Official representative of leading medical equipment manufacturers with genuine products and warranty</p>
-                </div>
-            </div>
-            
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="category-card">
-                    <div class="category-icon">🛠️</div>
-                    <h4>Complete Support</h4>
-                    <p>Installation, maintenance, and technical support throughout the equipment lifecycle</p>
-                </div>
-            </div>
-            
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="category-card">
-                    <div class="category-icon">🏆</div>
-                    <h4>Quality Assurance</h4>
-                    <p>Rigorous quality checks and compliance with international medical equipment standards</p>
-                </div>
-            </div>
-        </div>
+<div class="modal" id="imageModal">
+    <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <img id="modalImage" src="" alt="Enlarged Image">
     </div>
-</section>
+</div>
 
-<!-- Contact Section -->
-<section class="contact-section section">
-    <div class="container">
-        <div class="section-title">
-            <h2 style="color: white;">Get In Touch</h2>
-            <p style="color: rgba(255,255,255,0.8);">Ready to upgrade your medical facility? Contact us today</p>
-        </div>
-        
-        <div class="row">
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="contact-card">
-                    <div class="contact-icon">📍</div>
-                    <h4>Visit Us</h4>
-                    <p>Damak-6, Jhapa, Nepal</p>
-                    <a href="https://maps.app.goo.gl/1zjA38Yi9mMP39f19" class="btn btn-outline-light">View Map</a>
-                </div>
-            </div>
-            
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="contact-card">
-                    <div class="contact-icon">📞</div>
-                    <h4>Call Us</h4>
-                    <p><a href="tel:023575635" style="color: white;">023575635</a></p>
-                    <p><a href="tel:9842632512" style="color: white;">9842632512</a></p>
-                </div>
-            </div>
-            
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="contact-card">
-                    <div class="contact-icon">✉️</div>
-                    <h4>Email Us</h4>
-                    <p><a href="mailto:gmlsdmk@gmail.com" style="color: white;">gmlsdmk@gmail.com</a></p>
-                    <a href="contact.html" class="btn btn-outline-light">Send Message</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Footer -->
 <footer class="footer">
     <div class="container">
         <div class="row">
@@ -664,7 +664,7 @@
             <div class="col-lg-2 col-md-6 mb-4">
                 <h5>Quick Links</h5>
                 <ul class="list-unstyled">
-                    <li><a href="../">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="products.html">Products</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -675,7 +675,6 @@
                 <h5>Services</h5>
                 <ul class="list-unstyled">
                     <li><a href="#">Installation</a></li>
-                    <li><a href="#"></a></li>
                     <li><a href="#">Maintenance</a></li>
                     <li><a href="#">Support</a></li>
                 </ul>
@@ -693,69 +692,160 @@
 
 <div class="copyright">
     <div class="container">
-        <p style="color: white;">Copyright © 2025 Global Medilab & Surgical Pvt. Ltd | Assembled by [Aagaman Baral]</p>
+        <p>Copyright © 2025 Global Medilab & Surgical Pvt. Ltd | Assembled by [Aagaman Baral]</p>
     </div>
 </div>
 
-
-<!-- Scripts -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+    // Smooth scrolling for anchor links (from index.html)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
         });
     });
-});
 
-// Counter animation
-function animateCounters() {
-    const counters = document.querySelectorAll('.stat-number');
-    
-    counters.forEach(counter => {
-        const target = parseInt(counter.innerText.replace(/\D/g, ''));
-        const increment = target / 100;
-        let current = 0;
-        
-        const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-                counter.innerText = counter.innerText.includes('+') ? target + '+' : 
-                                  counter.innerText.includes('/') ? '24/7' : target;
-                clearInterval(timer);
-            } else {
-                counter.innerText = Math.floor(current);
+    // Counter animation — skips static counters with 'no-counter' (from index.html, not used in gallery, but included for consistency)
+    function animateCounters() {
+        const counters = document.querySelectorAll('.stat-number:not(.no-counter)');
+
+        counters.forEach(counter => {
+            const target = parseInt(counter.innerText.replace(/\D/g, ''));
+            const increment = target / 100;
+            let current = 0;
+
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    counter.innerText = counter.innerText.includes('+') ? target + '+' : target;
+                    clearInterval(timer);
+                } else {
+                    counter.innerText = Math.floor(current);
+                }
+            }, 20);
+        });
+    }
+
+    // Trigger counter animation when stats section is visible (from index.html, not used in gallery)
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounters();
+                observer.unobserve(entry.target);
             }
-        }, 20);
+        });
     });
-}
 
-// Trigger counter animation when stats section is visible
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            animateCounters();
-            observer.unobserve(entry.target);
+    // You might need to adjust which section this observes if you add stats to gallery
+    // observer.observe(document.querySelector('.stats-section')); 
+
+    // Add scroll effect to navbar (from index.html)
+    window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navigation');
+        if (window.scrollY > 50) {
+            navbar.style.background = 'rgba(248, 249, 250, 0.98)';
+        } else {
+            navbar.style.background = 'rgba(248, 249, 250, 0.95)';
         }
     });
-});
 
-observer.observe(document.querySelector('.stats-section'));
+    // Gallery specific JavaScript (from your original gallery.html)
+    const galleryItems = [
+        { src: 'https://via.placeholder.com/600x400/667eea/ffffff?text=Project+Image+1', category: 'projects', title: 'Project Alpha', description: 'Successful installation of advanced lab equipment.' },
+        { src: 'https://via.placeholder.com/600x400/e74c3c/ffffff?text=Event+Image+1', category: 'events', title: 'Medical Expo 2024', description: 'Showcasing our latest innovations.' },
+        { src: 'https://via.placeholder.com/600x400/2c3e50/ffffff?text=Team+Photo+1', category: 'team', title: 'Our Dedicated Team', description: 'Working together for better healthcare.' },
+        { src: 'https://via.placeholder.com/600x400/764ba2/ffffff?text=Facility+Image+1', category: 'facilities', title: 'Our Modern Office', description: 'Equipped to serve you better.' },
+        { src: 'https://via.placeholder.com/600x400/667eea/ffffff?text=Project+Image+2', category: 'projects', title: 'Hospital Renovation', description: 'Providing essential medical supplies.' },
+        { src: 'https://via.placeholder.com/600x400/e74c3c/ffffff?text=Event+Image+2', category: 'events', title: 'Health Workshop', description: 'Educating on new diagnostic methods.' },
+        { src: 'https://via.placeholder.com/600x400/2c3e50/ffffff?text=Team+Photo+2', category: 'team', title: 'Team Building Session', description: 'Strengthening bonds and collaboration.' },
+        { src: 'https://via.placeholder.com/600x400/764ba2/ffffff?text=Facility+Image+2', category: 'facilities', title: 'Laboratory Setup', description: 'State-of-the-art laboratory for diagnostics.' },
+        { src: 'https://via.placeholder.com/600x400/667eea/ffffff?text=Project+Image+3', category: 'projects', title: 'New Clinic Launch', description: 'Full medical setup for a new clinic.' },
+        { src: 'https://via.placeholder.com/600x400/e74c3c/ffffff?text=Event+Image+3', category: 'events', title: 'Product Demo Day', description: 'Live demonstrations of new equipment.' },
+        { src: 'https://via.placeholder.com/600x400/2c3e50/ffffff?text=Team+Photo+3', category: 'team', title: 'Annual Gala', description: 'Celebrating a successful year with the team.' },
+        { src: 'https://via.placeholder.com/600x400/764ba2/ffffff?text=Facility+Image+3', category: 'facilities', title: 'Warehouse & Logistics', description: 'Efficient storage and delivery of products.' }
+    ];
 
-// Add scroll effect to navbar
-window.addEventListener('scroll', function() {
-    const navbar = document.querySelector('.navigation');
-    if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(248, 249, 250, 0.98)';
-    } else {
-        navbar.style.background = 'rgba(248, 249, 250, 0.95)';
+    const galleryContainer = document.getElementById('gallery');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const loadMoreBtn = document.getElementById('loadMoreBtn');
+    const itemsPerPage = 6; // Number of items to show per load
+    let currentItems = itemsPerPage;
+
+    function renderGallery(filter = 'all') {
+        galleryContainer.innerHTML = ''; // Clear existing items
+        const filteredItems = filter === 'all' 
+            ? galleryItems 
+            : galleryItems.filter(item => item.category === filter);
+        
+        filteredItems.slice(0, currentItems).forEach(item => {
+            const galleryItem = document.createElement('div');
+            galleryItem.classList.add('gallery-item');
+            galleryItem.setAttribute('data-category', item.category);
+            galleryItem.innerHTML = `
+                <img src="${item.src}" alt="${item.title}">
+                <div class="gallery-overlay">
+                    <h3>${item.title}</h3>
+                    <p>${item.description}</p>
+                </div>
+            `;
+            galleryContainer.appendChild(galleryItem);
+        });
+
+        // Show/hide load more button
+        if (currentItems >= filteredItems.length) {
+            loadMoreBtn.style.display = 'none';
+        } else {
+            loadMoreBtn.style.display = 'block';
+        }
     }
-});
+
+    // Filter functionality
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            const filter = this.getAttribute('data-filter');
+            currentItems = itemsPerPage; // Reset items when filter changes
+            renderGallery(filter);
+        });
+    });
+
+    // Load More functionality
+    loadMoreBtn.addEventListener('click', function() {
+        currentItems += itemsPerPage;
+        const activeFilter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
+        renderGallery(activeFilter);
+    });
+
+    // Initial render
+    renderGallery();
+
+    // Modal functionality
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalClose = document.querySelector('.modal-close');
+
+    galleryContainer.addEventListener('click', function(e) {
+        if (e.target.tagName === 'IMG') {
+            modal.classList.add('active');
+            modalImage.src = e.target.src;
+        }
+    });
+
+    modalClose.addEventListener('click', function() {
+        modal.classList.remove('active');
+    });
+
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) { // Close when clicking outside the image
+            modal.classList.remove('active');
+        }
+    });
 </script>
 
 </body>
