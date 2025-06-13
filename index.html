@@ -445,7 +445,7 @@
     </div>
 </nav>
     <div class="scroll-text">
-    <div class="scroll-inner">
+    <div class="scroll-inner"> 
       The one & only <span class="highlight">WHO-GDP</span> and <span class="highlight">(QMS) ISO 9001:2015 Certified</span> Distributor House in Koshi Province, Nepal.
     </div>
   </div>
@@ -542,7 +542,7 @@
         <div class="row">
             <div class="col-lg-3 col-md-6">
                 <div class="stat-item">
-                    <span class="stat-number">500+</span>
+                    <span class="stat-number">250+</span>
                     <div class="stat-label">Equipments Installed</div>
                 </div>
             </div>
@@ -554,13 +554,13 @@
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="stat-item">
-                    <span class="stat-number">200+</span>
+                    <span class="stat-number">500+</span>
                     <div class="stat-label">Happy Clients</div>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="stat-item">
-                    <span class="stat-number">24/7</span>
+                    <span class="stat-number no-counter">24/7</span>
                     <div class="stat-label">Support Service</div>
                 </div>
             </div>
@@ -740,58 +740,58 @@
 <script>
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
     });
+  });
 });
 
-// Counter animation
+// Counter animation — skips static counters with 'no-counter'
 function animateCounters() {
-    const counters = document.querySelectorAll('.stat-number');
-    
-    counters.forEach(counter => {
-        const target = parseInt(counter.innerText.replace(/\D/g, ''));
-        const increment = target / 100;
-        let current = 0;
-        
-        const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-                counter.innerText = counter.innerText.includes('+') ? target + '+' : 
-                                  counter.innerText.includes('/') ? '24/7' : target;
-                clearInterval(timer);
-            } else {
-                counter.innerText = Math.floor(current);
-            }
-        }, 20);
-    });
+  const counters = document.querySelectorAll('.stat-number:not(.no-counter)');
+
+  counters.forEach(counter => {
+    const target = parseInt(counter.innerText.replace(/\D/g, ''));
+    const increment = target / 100;
+    let current = 0;
+
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        counter.innerText = counter.innerText.includes('+') ? target + '+' : target;
+        clearInterval(timer);
+      } else {
+        counter.innerText = Math.floor(current);
+      }
+    }, 20);
+  });
 }
 
 // Trigger counter animation when stats section is visible
 const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            animateCounters();
-            observer.unobserve(entry.target);
-        }
-    });
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateCounters();
+      observer.unobserve(entry.target);
+    }
+  });
 });
 
 observer.observe(document.querySelector('.stats-section'));
 
 // Add scroll effect to navbar
 window.addEventListener('scroll', function() {
-    const navbar = document.querySelector('.navigation');
-    if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(248, 249, 250, 0.98)';
-    } else {
-        navbar.style.background = 'rgba(248, 249, 250, 0.95)';
-    }
+  const navbar = document.querySelector('.navigation');
+  if (window.scrollY > 50) {
+    navbar.style.background = 'rgba(248, 249, 250, 0.98)';
+  } else {
+    navbar.style.background = 'rgba(248, 249, 250, 0.95)';
+  }
 });
 </script>
+
 
 </body>
 </html>
