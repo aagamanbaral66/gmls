@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Biochemistry</title>
+    <link rel="icon" type="image/png" href="../Images/global.png" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* General Body and Box Sizing */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Navigation Bar Styling */
+        .navigation {
+            background: rgba(248, 249, 250, 0.95) !important;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            padding: 0.8rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navigation .nav-link {
+            color: #2c3e50 !important;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .navigation .nav-link:hover {
+            color: #e74c3c !important;
+        }
+
+        .navigation .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background-color: #e74c3c;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .navigation .nav-link:hover::after {
+            width: 80%;
+        }
+
+        /* Hero Section Styling (adapted for specific product pages) */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 40vh; /* Slightly smaller hero for sub-pages */
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 80px 0;
+            text-align: center; /* Center content for sub-pages */
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.1)" points="0,1000 1000,0 1000,1000"/></svg>');
+            background-size: cover;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out 0.2s both;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Product Card Styles (NEW - designed to mimic wtcnepal) */
+        .product-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            height: 100%; /* Ensures all cards in a row have equal height */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Pushes button to bottom */
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .product-card img {
+            max-width: 100%;
+            height: 150px; /* Fixed height for consistent image display */
+            object-fit: contain; /* Ensures the image fits without distortion */
+            margin-bottom: 15px;
+        }
+
+        .product-card h6 {
+            font-size: 1.1rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 600;
+            flex-grow: 1; /* Allows title to take available space */
+        }
+
+        .product-card .btn-view-more {
+            background-color: #667eea;
+            color: white;
+            border: 1px solid #667eea;
+            padding: 8px 20px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block; /* Keep button inline-block for proper padding */
+        }
+
+        .product-card .btn-view-more:hover {
+            background-color: #764ba2;
+            border-color: #764ba2;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Contact Section Styling */
+        .contact-section {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .contact-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+            background: rgba(231, 76, 60, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+        .btn-outline-light {
+            border: 2px solid white;
+            color: white;
+            padding: 10px 25px;
+            font-weight: 600;
+            border-radius: 50px;
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-light:hover {
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        /* Footer Styling */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer h5 {
+            color: #e74c3c;
+            margin-bottom: 1rem;
+        }
+
+        .footer a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #e74c3c;
+            text-decoration: none;
+        }
+
+        .copyright {
+            background: #1a252f;
+            color: #95a5a6;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 991px) { /* Medium devices (tablets) */
+            .col-md-3 {
+                flex: 0 0 50%; /* Two products per row */
+                max-width: 50%;
+            }
+        }
+        @media (max-width: 767px) { /* Small devices (phones) */
+            .col-sm-6 {
+                flex: 0 0 100%; /* One product per row */
+                max-width: 100%;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .section {
+                padding: 60px 0;
+            }
+        }
+    .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer h5 {
+            color: #e74c3c;
+            margin-bottom: 1rem;
+        }
+
+        .footer a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #e74c3c;
+            text-decoration: none;
+        }
+
+        .copyright {
+            background: #1a252f;
+            color: #95a5a6;
+            padding: 1rem 0;
+            text-align: center;
+        }
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light navigation">
+    <div class="container">
+        <a class="navbar-brand d-lg-none" href="#">Menu</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-between" id="navbarContent">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="../">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" href="team.html">Our Team</a></li>
+                <!-- <li class="nav-item"><a class="nav-link" href="xyz.html">XYZ</a></li> -->
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto hero-content">
+                <h1>WEBPAGE UNDER CONSTRUCTION!!</h1>
+                <p>....</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="haematology-products">
+    <!-- <div class="container">
+        <div class="section-title">
+            <h2>Our Biochemistry Solutions</h2>
+            <p>...</p>
+        </div>
+        <div class="divider">
+            <h3 class="product-group-title" style="color: #9c5907; font-weight: bold;">3-Part Analyzer</h3>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="product-card">
+                    <img src="../Images/PRODUCTS/hematology1.png" alt="Agappe Mispa Count X">
+                    <h6>Agappe Mispa Count X</h6>
+                    <a href="info/countx.html" target="_blank" class="btn-view-more">View More</a>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="product-card">
+                    <img src="../Images/Products/hematology2.png" alt="Agappe Mispa Count X Plus">
+                    <h6>Agappe Mispa Count X Plus</h6>
+                    <a href="info/countplus.html" target="_blank" class="btn-view-more">View More</a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="product-card">
+                    <img src="../Images/Products/hematology3.png" alt="Avantor Benesphera H33S">
+                    <h6>Avantor Benesphera H33S</h6>
+                    <a href="info/h33s.html" target="_blank" class="btn-view-more">View More</a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="product-card">
+                    <img src="../Images/Products/hematology5.png" alt="Bioline BH360">
+                    <h6>Bioline BH360</h6>
+                    <a href="info/bh360.html" target="_blank" class="btn-view-more">View More</a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="product-card">
+                    <img src="../Images/Products/hematology4.png" alt="Erba H360">
+                    <h6>Erba H360</h6>
+                    <a href="info/erbah360.html" target="_blank" class="btn-view-more">View More</a>
+                </div>
+            </div>
+         </div>
+         <div class="row"> 
+        <div class="divider">
+            <h3 class="product-group-title" style="color: #9c5907; font-weight: bold;">5-Part Analyzer</h3>
+        </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="product-card">
+                    <img src="../Images/Products/hematology6.png" alt="Agappe Mispa HX50">
+                    <h6>Agappe Mispa HX50</h6>
+                    <a href="info/hx50.html" target="_blank" class="btn-view-more">View More</a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="product-card">
+                    <img src="../Images/Products/hematology9.png" alt="Bioline BH560 Pro">
+                    <h6>Bioline BH560 Pro</h6>
+                    <a href="https://www.biolinediagnostics.com/hematology/#BH560Pro" target="_blank" class="btn-view-more">View More</a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="product-card">
+                    <img src="../Images/Products/hematology7.png" alt="Erba H560">
+                    <h6>Erba H560</h6>
+                    <a href="https://www.erbalachema.com/en/products-and-solutions/hematology/h-560/" target="_blank" class="btn-view-more">View More</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row"> 
+        <div class="divider">
+            <h3 class="product-group-title" style="color: #9c5907; font-weight: bold;">6-Part Analyzer</h3>
+        </div>
+        </div>
+        <div class="row">
+        
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="product-card">
+                    <img src="../Images/Products/hematology8.png" alt="Agappe Mispa HX80">
+                    <h6>Agappe Mispa HX80</h6>
+                    <a href="https://www.agappe.com/in/mispa-hx80-6-part-cell-counter.html" target="_blank" class="btn-view-more">View More</a>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <h5>Global Medilab & Surgical</h5>
+                <p>Leading provider of medical equipment and laboratory solutions in Nepal. Committed to advancing healthcare through innovative technology.</p>
+            </div>
+            
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="../">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h5>Services</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Installation</a></li>
+                    <li><a href="#">Maintenance</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 mb-4">
+                <h5>Contact Info</h5>
+                <p><strong>Address:</strong> Damak-6, Jhapa, Nepal</p>
+                <p><strong>Phone:</strong> 023575635, 9842632512</p>
+                <p><strong>Email:</strong> gmlsdmk@gmail.com</p>
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="copyright">
+    <div class="container">
+        <p style="color: white;">Copyright © 2025 Global Medilab & Surgical Pvt. Ltd | Assembled by [Aagaman Baral]</p>
+    </div>
+</div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+// Smooth scrolling for anchor links (if you add internal anchors for specific products)
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+// Add scroll effect to navbar (from reference)
+window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navigation');
+    if (window.scrollY > 50) {
+        navbar.style.background = 'rgba(248, 249, 250, 0.98)';
+    } else {
+        navbar.style.background = 'rgba(248, 249, 250, 0.95)';
+    }
+});
+</script>
+
+</body>
+</html>
