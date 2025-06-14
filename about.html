@@ -204,6 +204,29 @@
             margin-top: 40px;
             padding-top: 20px;
         }
+        .quality-vision-card {
+            text-align: center;
+            position: relative;
+        }
+
+        .quality-vision-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+        }
+
+        .quality-vision-card h3 {
+            margin-top: 40px;
+            padding-top: 20px;
+        }
+
+        
 
        .footer {
             background: #2c3e50;
@@ -336,7 +359,7 @@
                 </div>
             </div>
             <div class="col-lg-6 mb-4">
-                <div class="content-card mission-vision-card">
+                <div class="content-card quality-vision-card">
                     <h3>Our Quality</h3>
                     <p style="font-size: large;">We maintain the highest quality standards and continuously improve our processes to meet global expectations. Our commitment to quality extends beyond just products – it encompasses every aspect of our service, from initial consultation to after-sales support, ensuring that our customers receive nothing but the best.</p>
                 </div>
