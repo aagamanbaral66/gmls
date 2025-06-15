@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Agappe Mispa Count X Plus</title>
+    <title>Agappe Mispa Count X - Global Medilab & Surgical Pvt. Ltd</title>
     <link rel="icon" type="image/png" href="../Images/global.png" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="../home.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
         .navigation {
             background: rgba(248, 249, 250, 0.95) !important;
             backdrop-filter: blur(10px);
@@ -45,7 +56,269 @@
         .navigation .nav-link:hover::after {
             width: 80%;
         }
-    .footer {
+
+        .breadcrumb-section {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 1rem 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .breadcrumb {
+            background: transparent;
+            padding: 0;
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .breadcrumb a {
+            text-decoration: none;
+            color: #007BFF;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: #e74c3c;
+        }
+
+        .product-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 4rem 0 2rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.1)" points="0,1000 1000,0 1000,1000"/></svg>');
+            background-size: cover;
+        }
+
+        .product-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .product-hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .product-hero .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 0;
+        }
+
+        .product-section {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .photo-gallery {
+            position: relative;
+        }
+
+        .main-image {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .main-image img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: contain;
+            border-radius: 8px;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .thumbnails {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .thumbnails img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 3px solid transparent;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .thumbnails img:hover {
+            border: 3px solid #e74c3c;
+            transform: scale(1.1);
+            box-shadow: 0 5px 20px rgba(231, 76, 60, 0.3);
+        }
+
+        .product-details {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            height: fit-content;
+        }
+
+        .product-details h1 {
+            color: #2c3e50;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .product-details h4 {
+            color: #667eea;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #f8f9fa;
+        }
+
+        .product-description {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 2rem;
+            text-align: justify;
+        }
+
+        .inquiry-form {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid #dee2e6;
+        }
+
+        .inquiry-form h5 {
+            color: #2c3e50;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-control {
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            padding: 12px 15px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+        }
+
+        .inquiry-button {
+            display: block;
+            width: 100%;
+            padding: 12px 20px;
+            background: linear-gradient(45deg, #25D366, #128C4A);
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        }
+
+        .inquiry-button:hover {
+            background: linear-gradient(45deg, #128C4A, #0d7a3f);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+            color: white;
+            text-decoration: none;
+        }
+
+        .features-section {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+            height: 100%;
+            border: 1px solid #f8f9fa;
+            margin-bottom: 2rem;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .feature-card h4 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            color: #7f8c8d;
+            margin-bottom: 0;
+        }
+
+        .footer {
             background: #2c3e50;
             color: white;
             padding: 3rem 0 1rem;
@@ -73,150 +346,35 @@
             padding: 1rem 0;
             text-align: center;
         }
-</style>
-     <style>
-    
 
-    .breadcrumb {
-      margin-bottom: 15px;
-    }
+        @media (max-width: 768px) {
+            .product-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .product-hero .subtitle {
+                font-size: 1rem;
+            }
 
-    .breadcrumb a {
-      text-decoration: none;
-      color: #007BFF;
-    }
+            .product-section {
+                padding: 2rem 0;
+            }
 
-    .breadcrumb span {
-      margin: 0 5px;
-    }
+            .thumbnails {
+                justify-content: center;
+            }
 
-    .product-page {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .photo-gallery {
-      flex: 1 1 300px;
-    }
-
-    .main-image img {
-      width: 100%;
-      max-height: 400px;
-      object-fit: contain;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      margin-bottom: 10px;
-      transition: opacity 0.3s ease-in-out;
-    }
-
-    .thumbnails {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .thumbnails img {
-        width: 100px;
-        height: 100px;
-        object-fit: cover;
-        border-radius: 5px;
-        cursor: pointer;
-        border: 2px solid transparent;
-        transition: border 0.3s, transform 0.3s;
-        image-rendering: -webkit-optimize-contrast;
-        image-rendering: crisp-edges;
-        backface-visibility: hidden;
-        transform: translateZ(0);
-    }
-
-
-    .thumbnails img:hover {
-      border: 2px solid #007BFF;
-      transform: scale(1.05);
-    }
-
-    .product-details {
-      flex: 2 1 300px;
-      background-color: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    .product-details h1 {
-      margin-top: 0;
-    }
-
-    .product-details button {
-      padding: 10px 20px;
-      background-color: #28a745;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-     .inquiry-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #25D366; /* WhatsApp green */
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  .inquiry-button:hover {
-    background-color: #128C4A;
-  }
-
-    /* Responsive Behavior */
-    @media (max-width: 768px) {
-      .product-page {
-        flex-direction: column;
-      }
-
-      .thumbnails {
-        justify-content: center;
-      }
-    }
-  .footer {
-            background: #2c3e50;
-            color: white;
-            padding: 3rem 0 1rem;
+            .thumbnails img {
+                width: 60px;
+                height: 60px;
+            }
         }
-
-        .footer h5 {
-            color: #e74c3c;
-            margin-bottom: 1rem;
-        }
-
-        .footer a {
-            color: #bdc3c7;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer a:hover {
-            color: #e74c3c;
-            text-decoration: none;
-        }
-
-        .copyright {
-            background: #1a252f;
-            color: #95a5a6;
-            padding: 1rem 0;
-            text-align: center;
-        }
-</style>
+    </style>
 </head>
 <body>
 
-
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light navigation">
+<nav class="navbar navbar-expand-lg navbar-light navigation">
     <div class="container">
         <a class="navbar-brand d-lg-none" href="#">Menu</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
@@ -228,144 +386,139 @@
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link" href="../">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="../../products.html">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="../products.html">Products</a></li>
                 <li class="nav-item"><a class="nav-link" href="../contact.html">Contact</a></li>
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link" href="../gallery.html">Gallery</a></li>
                 <li class="nav-item"><a class="nav-link" href="../team.html">Our Team</a></li>
-                <!-- <li class="nav-item"><a class="nav-link" href="../xyz.html">XYZ</a></li> -->
             </ul>
         </div>
     </div>
 </nav>
 
-<div class="info">
-    <div class="container-fluid main-content">
+<section class="product-hero">
     <div class="container">
-        <div class="row">
-                <nav class="breadcrumb" style="font-family: Arial; font-size: 14px;">
-                <a href="../" style="text-decoration: none; color: #007BFF;">Home</a> &gt; 
-                <a href="../products.html" style="text-decoration: none; color: #007BFF;">Products</a> &gt; 
-                <a href="#" style="text-decoration: none; color: #555;">Agappe Mispa Count X Plus</a>
-                </nav>
-
-
-                            <!-- Product Page -->
-                            <div class="product-page">
-                                <!-- Photo Gallery -->
-                                <div class="photo-gallery">
-                                <div class="main-image">
-                                    <img id="mainImage" src="https://www.agappe.com/media/catalog/product/m/i/mispa_count_x_2000x_8_.jpg?auto=webp&format=pjpg&width=640&height=800&fit=cover" alt="Main Product Image" />
-                                </div>
-                                <div class="thumbnails">
-                                    <img src="../Images/Products/countplus1.png" alt="Thumb 1" onclick="changeImage('https://www.agappe.com/media/catalog/product/m/i/mispa_countx_plus_01-min_1_.png?auto=webp&format=png&width=640&height=800&fit=cover')" />
-                                    <img src="../Images/Products/countplus2.png" alt="Thumb 2" onclick="changeImage('https://www.agappe.com/media/catalog/product/m/i/mispa_countx_plus_02-min_1_.png?auto=webp&format=png&width=640&height=800&fit=cover')" />
-                                    <img src="../Images/Products/countplus3.png" alt="Thumb 3" onclick="changeImage('https://www.agappe.com/media/catalog/product/m/i/mispa_countx_plus_03-min_1_.png?auto=webp&format=png&width=640&height=800&fit=cover')" />
-                                </div>
-                                </div>
-
-                                <!-- Product Details -->
-                                <div class="product-details">
-                                <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-bottom: 20px ;">Agappe Mispa Count X Plus</h1>
-                                <h4 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-bottom: 20px;">Advanced Automated 3Part Differential Hematology Analyzer (3 Part Differential Cell Counter)</h4>
-                                <p style="font-family: 'Times New Roman', Times, serif; font-size: larger;" >Mispa Count X Plus is a quantitative Auto Hematology Analyzer and 3-part differential counter for in Vitro Diagnostic Use in clinical laboratories. The purpose of this analyzer is to identify the normal patient, with all normal system-generated parameters, and to flag or identify patient results.</p>
-                                <!-- <p><strong>Price:</strong> $99.99</p>
-                                <button>Add to Cart</button> -->
-                                <div style="margin-top: 20px;">
-                                    <input type="text" id="userName" placeholder="Your Name" style="padding: 8px; width: 100%; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc;">
-                                    <input type="text" id="organizationName" placeholder="Organization Name" style="padding: 8px; width: 100%; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc;">
-                                    <input type="text" id="userAddress" placeholder="Address" style="padding: 8px; width: 100%; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc;">
-                                    <button class="inquiry-button" onclick="sendWhatsApp()">Enquire</button>
-                                </div>
-
-                                </div>
-                            </div>
-
-                            <script>
-                                function changeImage(src) {
-                                const mainImage = document.getElementById('mainImage');
-                                mainImage.style.opacity = 0;
-                                setTimeout(() => {
-                                    mainImage.src = src;
-                                    mainImage.style.opacity = 1;
-                                }, 200);
-                                }
-                            </script>
-                            <script>
-                                function sendWhatsApp() {
-                                    const name = document.getElementById('userName').value.trim();
-                                    const organization = document.getElementById('organizationName').value.trim();
-                                    const address = document.getElementById('userAddress').value.trim();
-
-                                    if (name === '' || organization === '' || address === '') {
-                                        alert('Please enter your Name, Organization Name, and Address.');
-                                        return;
-                                    }
-
-                                    const message = `Hello, I am ${name} from ${organization} from ${address}. I'd like to enquire about Agappe Mispa Count X Plus.`;
-                                    const phoneNumber = '9779852670594';
-                                    const encodedMessage = encodeURIComponent(message);
-                                    const whatsappURL = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
-
-                                    window.open(whatsappURL, '_blank');
-                                }
-                            </script>
-
-
+        <div class="row align-items-center">
+            <div class="col-lg-12 product-hero-content text-center">
+                <h1>Agappe Mispa Count Plus</h1>
+                <p class="subtitle">Advanced Automated 3 Part Differential Hematology Analyzer</p>
+            </div>
         </div>
     </div>
-</div>  
+</section>
+
+<!-- Product Section -->
+<section class="product-section">
+  <div class="container">
+    <div class="row">
+      <!-- Photo Gallery -->
+      <div class="col-lg-6 mb-4">
+        <div class="photo-gallery">
+          <div class="main-image">
+            <img id="mainImage" src="https://www.agappe.com/media/catalog/product/m/i/mispa_countx_plus_01-min_1_.png?auto=webp&format=png&width=640&height=800&fit=cover" alt="Count X Plus">
+          </div>
+           <div class="thumbnails">
+                <img src="../Images/Products/countplus1.png" alt="Thumb 1" onclick="changeImage('https://www.agappe.com/media/catalog/product/m/i/mispa_countx_plus_01-min_1_.png?auto=webp&format=png&width=640&height=800&fit=cover')" />
+                <img src="../Images/Products/countplus2.png" alt="Thumb 2" onclick="changeImage('https://www.agappe.com/media/catalog/product/m/i/mispa_countx_plus_02-min_1_.png?auto=webp&format=png&width=640&height=800&fit=cover')" />
+                <img src="../Images/Products/countplus3.png" alt="Thumb 3" onclick="changeImage('https://www.agappe.com/media/catalog/product/m/i/mispa_countx_plus_03-min_1_.png?auto=webp&format=png&width=640&height=800&fit=cover')" />
+            </div>
+        </div>
+      </div>
+
+      <!-- Details & Inquiry -->
+      <div class="col-lg-6">
+        <div class="product-details">
+          <h1>Agappe Mispa Count X Plus</h1>
+          <h4>3 Part Differential Cell Counter</h4>
+          <div class="product-description">
+            <p style="font-family: 'Times New Roman', Times, serif; font-size: larger;" >Mispa Count X Plus is a quantitative Auto Hematology Analyzer and 3-part differential counter for in Vitro Diagnostic Use in clinical laboratories. The purpose of this analyzer is to identify the normal patient, with all normal system-generated parameters, and to flag or identify patient results.</p>
+          </div>
+          <div class="inquiry-form">
+            <h5>Request Information</h5>
+            <div class="form-group">
+              <input type="text" id="userName" class="form-control" placeholder="Your Name *">
+            </div>
+            <div class="form-group">
+              <input type="text" id="organizationName" class="form-control" placeholder="Organization Name *">
+            </div>
+            <div class="form-group">
+              <input type="text" id="userAddress" class="form-control" placeholder="Address *">
+            </div>
+            <button class="inquiry-button" onclick="sendWhatsApp()">📱 Enquire via WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- Footer -->
 <footer class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-6 mb-4">
-                <h5>Global Medilab & Surgical</h5>
-                <p>Leading provider of medical equipment and laboratory solutions in Nepal. Committed to advancing healthcare through innovative technology.</p>
-            </div>
-            
-            <div class="col-lg-2 col-md-6 mb-4">
-                <h5>Quick Links</h5>
-                <ul class="list-unstyled">
-                    <li><a href="../">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            
-            <div class="col-lg-2 col-md-6 mb-4">
-                <h5>Services</h5>
-                <ul class="list-unstyled">
-                    <li><a href="#">Installation</a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#">Maintenance</a></li>
-                    <li><a href="#">Support</a></li>
-                </ul>
-            </div>
-            
-            <div class="col-lg-4 col-md-6 mb-4">
-                <h5>Contact Info</h5>
-                <p><strong>Address:</strong> Damak-6, Jhapa, Nepal</p>
-                <p><strong>Phone:</strong> 023575635, 9842632512</p>
-                <p><strong>Email:</strong> gmlsdmk@gmail.com</p>
-            </div>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <h5>Global Medilab & Surgical</h5>
+        <p>Leading provider of medical equipment and laboratory solutions in Nepal.</p>
+      </div>
+      <div class="col-lg-2">
+        <h5>Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="../">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../products.html">Products</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2">
+        <h5>Services</h5>
+        <ul class="list-unstyled">
+          <li><a href="#">Installation</a></li>
+          <li><a href="#">Maintenance</a></li>
+          <li><a href="#">Support</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4">
+        <h5>Contact Info</h5>
+        <p><strong>Address:</strong> Damak-6, Jhapa, Nepal</p>
+        <p><strong>Phone:</strong> 023575635, 9842632512</p>
+        <p><strong>Email:</strong> gmlsdmk@gmail.com</p>
+      </div>
     </div>
+  </div>
 </footer>
 
 <div class="copyright">
-    <div class="container">
-        <p>Copyright © 2025 Global Medilab & Surgical Pvt. Ltd | Developed by [Aagaman Baral]</p>
-    </div>
+  <p>Copyright © 2025 Global Medilab & Surgical Pvt. Ltd | Developed by [Aagaman Baral]</p>
 </div>
 
-
-
+<!-- Scripts -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  function changeImage(src) {
+    const mainImage = document.getElementById('mainImage');
+    mainImage.style.opacity = 0;
+    setTimeout(() => {
+      mainImage.src = src;
+      mainImage.style.opacity = 1;
+    }, 200);
+  }
+
+  function sendWhatsApp() {
+    const name = document.getElementById('userName').value.trim();
+    const org = document.getElementById('organizationName').value.trim();
+    const address = document.getElementById('userAddress').value.trim();
+    if (!name || !org || !address) {
+      alert('Please fill all fields.');
+      return;
+    }
+    const msg = `Hello, I am ${name} from ${org} at ${address}. I'd like to enquire about Agappe Mispa Count X Plus.`;
+    const encodedMsg = encodeURIComponent(msg);
+    window.open(`https://api.whatsapp.com/send?phone=9779852670594&text=${encodedMsg}`, '_blank');
+  }
+</script>
 
 </body>
 </html>
