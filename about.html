@@ -229,6 +229,12 @@
         .quality-vision-card:hover{
             background-color: #1a252f;
         }
+        .quality-vision-card:hover h3{ 
+            color: #4d6e8d;
+        }
+        .quality-vision-card:hover p{
+            color: white;
+        }
 
         .mission-vision-card:hover{
             background-color: #279230;
@@ -319,10 +325,12 @@
         .values-card:nth-child(2) .content-card {
             background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
         }
-
-        .values-card:nth-child(3) .content-card {
-            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+        .values-card:nth-child(2) .content-card:hover {
+            background: linear-gradient(135deg, #eca2a2 0%, #771a1a 100%);
         }
+                    /* .values-card:nth-child(3) .content-card {
+                        background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+                    } */
 </style>
 </head>
 <body>
@@ -413,21 +421,21 @@
         
         <div class="row values-card">
             <div class="col-lg-4 col-md-6 mb-4">
-                <div class="content-card">
+                <div class="content-card" style="cursor: pointer;">
                     <h3>Excellence</h3>
                     <p style="font-size: large;">We strive for excellence in every aspect of our business, from product selection to customer service, ensuring that we exceed expectations at every step.</p>
                 </div>
             </div>
             
             <div class="col-lg-4 col-md-6 mb-4">
-                <div class="content-card">
+                <div class="content-card" style="cursor: pointer;">
                     <h3>Innovation</h3>
                     <p style="font-size: large;">We embrace innovation and continuously seek new technologies and solutions that can improve healthcare outcomes for our customers and their patients.</p>
                 </div>
             </div>
             
             <div class="col-lg-4 col-md-6 mb-4">
-                <div class="content-card">
+                <div class="content-card" style="cursor: pointer;">
                     <h3>Integrity</h3>
                     <p style="font-size: large;">We conduct our business with the highest ethical standards, building trust through transparency, honesty, and accountability in all our relationships.</p>
                 </div>
