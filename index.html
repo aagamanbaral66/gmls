@@ -45,7 +45,7 @@
         }
 
         .navigation {
-            background: rgba(248, 249, 250, 0.95) !important;
+            background: #CE2731 !important;
             backdrop-filter: blur(10px);
             box-shadow: 0 2px 15px rgba(0,0,0,0.1);
             padding: 0.8rem 0;
@@ -55,16 +55,18 @@
         }
 
         .navigation .nav-link {
-            color: #2c3e50 !important;
+            color: #ffffff !important;
             font-weight: 500;
             transition: all 0.3s ease;
             position: relative;
         }
 
         .navigation .nav-link:hover {
-            color: #e74c3c !important;
+            color: #b5b7bb !important;
         }
-
+        .nav-nav li{
+            color: rgb(255, 255, 255);
+        }
         .navigation .nav-link::after {
             content: '';
             position: absolute;
@@ -560,27 +562,28 @@
 <body>
 
 <!-- Navbar -->
+ 
 <nav class="navbar navbar-expand-lg navbar-light navigation">
+                <a href="../"><h1 style="padding-left: 30px; color: #ffffff;  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; display: inline-block;" class="headline-main" style="font-size: 40px; ">
+                    Global Medilab & Surgical Pvt. Ltd.
+                </h1>
+                </a>
     <div class="container">
+        
         <a class="navbar-brand d-lg-none" href="#">Menu</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
             aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse justify-content-between" id="navbarContent">
+        <div class="collapse navbar-collapse justify-content-between" id="navbarContent" >
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="../">Home</a></li>
+                <li class="nav-item"  style="color: white;"><a class="nav-link" href="../">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="../products.html">Products</a></li>
                 <li class="nav-item"><a class="nav-link" href="../contact.html">Contact</a></li>
             </ul>
-              <!-- Company Name -->
-               <a href="../">
-    <h1 style="font-family: Copperplate Gothic Std; font-size: 35px; color:#5FAC42;">
-      Global MediLab & Surgical Pvt. Ltd.
-    </h1>
-    </a>
+              
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link" href="../gallery.html">Gallery</a></li>
                 <li class="nav-item"><a class="nav-link" href="../team.html">Our Team</a></li>
@@ -599,55 +602,72 @@
   </div>
 
 
-<!-- Hero Section -->
-<section class="hero">
-    <!-- Floating icons for background aesthetics -->
-    <div class="floating-element">🧪</div>
-    <div class="floating-element">🔬</div>
-    <div class="floating-element">🏥</div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- Floating icons for background aesthetics -->
+        <div class="floating-element">🧪</div>
+        <div class="floating-element">🔬</div>
+        <div class="floating-element">🏥</div>
 
-    <div class="container">
+        
 
-        <div class="row align-items-center">
-            <!-- Left Image Column (visible on large screens only) -->
-            <div class="col-lg-3 d-none d-lg-flex justify-content-center align-items-center">
-                <div class="hero-image">
-                    <img src="Images/certificates/WHO.png" alt="Medical Instruments" style="animation: fadeInUp 1s ease-out;" class="expandable" onclick="openModal()">
+        <div class="container">
+            <div class="row align-items-center">
+                
+                <!-- Certificates Row - Shows on all devices -->
+                <div class="col-12">
+                    <!-- Mobile/Tablet: Stack certificates vertically or side by side -->
+                    <div class="d-lg-none certificate-row">
+                        <div class="certificate-container">
+                            <img src="Images/certificates/ISO.png" alt="ISO Certificate" class="expandable" onclick="openModal1()" >
+                            <img src="Images/certificates/WHO.png" alt="WHO Certificate" class="expandable" onclick="openModal()" >
+                        </div>
+                        <div class="certificate-container">
+                            
+                        </div>
+                    </div>
                 </div>
-            </div>
 
+                <!-- Desktop Layout -->
+                <div class="col-lg-3 d-none d-lg-flex justify-content-center align-items-center">
+                    <div class="hero-image">
+                        <img style="animation: fadeInUp 1s ease-out;" src="Images/certificates/ISO.png" alt="ISO Certificate" class="expandable" onclick="openModal1()">
+                    </div>
+                </div>
+                <!-- Global link -->
+        <a href="../" class="global-link">
+            <img src="Images/global.png" alt="Global">
+        </a>
+                <div class="col-lg-3 d-none d-lg-flex justify-content-center align-items-center">
+                    <div class="hero-image">
+                        <img src="Images/certificates/WHO.png" alt="WHO Certificate" style="animation: fadeInUp 1s ease-out; padding-bottom: 20px;" class="expandable" onclick="openModal()">
+                    </div>
+                </div>
             <!-- Main Content Column -->
-            <div class="col-lg-6 hero-content">
                 <h1 class="headline-main" style="font-size: 40px;">
                     Advanced Medical Solutions for Better Healthcare
                 </h1>
-                     <a href="../"><img style="animation: fadeInUp 1s ease-out;" src="Images/global.png" alt="Logo" class="global-logo"></a>   
                 <p>
                     Your trusted partner in medical equipment and laboratory solutions.
                     We provide cutting-edge diagnostic equipment, surgical instruments,
                     and comprehensive support services across Nepal.
                 </p>
+                <!-- Add this modal HTML anywhere in your body -->
+<div id="imageModal" class="image-modal" onclick="closeModal()">
+    <span class="close-modal" onclick="closeModal()">&times;</span>
+    <img id="modalImage" src="" alt="Full Screen Image">
+</div>
 
-                <div class="hero-buttons">
+                <div class="hero-buttons" style="padding-bottom: 20px;">
                     <a href="products.html" class="btn btn-primary-custom">View Products</a>
                     <a href="contact.html" class="btn btn-outline-custom">Get Quote</a>
                 </div>
             </div>
+            
 
             <!-- Your existing HTML with added onclick -->
 
-            <!-- Right Image Column (visible on large screens only) -->
-            <div class="col-lg-3 d-none d-lg-flex justify-content-center align-items-center">
-                <div class="hero-image">
-                    <img style="animation: fadeInUp 1s ease-out;" src="Images/certificates/ISO.png" alt="Lab Equipment" class="expandable" onclick="openModal1()">
-                </div>
-            </div>
 
-            <!-- Add this modal HTML anywhere in your body -->
-            <div id="imageModal" class="image-modal" onclick="closeModal()">
-                <span class="close-modal" onclick="closeModal()">&times;</span>
-                <img id="modalImage" src="" alt="Full Screen Image">
-            </div>
     </div>
 </section>
 
@@ -1010,5 +1030,27 @@ document.addEventListener('keydown', function(event) {
 });
 </script>
 <script src="//code.tidio.co/frhdqrtdbmr3ycqqx5nb107fvwrigbjr.js" async></script>
+  <script>
+        function openModal() {
+            document.getElementById('imageModal').style.display = 'block';
+            document.getElementById('modalImage').src = 'images/certificates/ISO.png';
+        }
+
+        function openModal1() {
+            document.getElementById('imageModal').style.display = 'block';
+            document.getElementById('modalImage').src = 'Images/vertificates/WHO.png';
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+
+        // Close modal when pressing Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
 </body>
 </html>
