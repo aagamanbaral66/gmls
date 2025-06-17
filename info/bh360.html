@@ -20,34 +20,39 @@ line-height: 1.6;
 color: #333;
 }
 .navigation {
-background: rgba(248, 249, 250, 0.95) !important;
-backdrop-filter: blur(10px);
-box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-padding: 0.8rem 0;
-position: sticky;
-top: 0;
-z-index: 1000;
-}
-.navigation .nav-link {
-color: #2c3e50 !important;
-font-weight: 500;
-transition: all 0.3s ease;
-position: relative;
-}
-.navigation .nav-link:hover {
-color: #e74c3c !important;
-}
-.navigation .nav-link::after {
-content: '';
-position: absolute;
-width: 0;
-height: 2px;
-bottom: -5px;
-left: 50%;
-background-color: #e74c3c;
-transition: all 0.3s ease;
-transform: translateX(-50%);
-}
+            background: #CE2731 !important;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            padding: 0.8rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navigation .nav-link {
+            color: #ffffff !important;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .navigation .nav-link:hover {
+            color: #b5b7bb !important;
+        }
+        .nav-nav li{
+            color: rgb(255, 255, 255);
+        }
+        .navigation .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background-color: #e74c3c;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
 .navigation .nav-link:hover::after {
 width: 80%;
 }
@@ -322,6 +327,7 @@ height: 60px;
 </head>
 <body>
 <!-- Navbar -->
+ 
 <nav class="navbar navbar-expand-lg navbar-light navigation">
                 <a href="../"><h1 style="padding-left: 30px; color: #ffffff;  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; display: inline-block;" class="headline-main" style="font-size: 40px; ">
                     Global Medilab & Surgical Pvt. Ltd.
