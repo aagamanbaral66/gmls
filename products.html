@@ -332,6 +332,13 @@
     /* Responsive font sizing */
     font-size: clamp(24px, 6vw, 40px);
 }
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    transition: top 0.3s ease;
+}
 </style>
 </head>
 <body>
@@ -540,5 +547,29 @@ window.addEventListener('scroll', function() {
 });
 </script>
 <script src="//code.tidio.co/frhdqrtdbmr3ycqqx5nb107fvwrigbjr.js" async></script>
+<script>
+let lastScrollTop = 0;
+const navbar = document.querySelector('.navbar');
+
+window.addEventListener("scroll", function () {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    const isMobile = window.innerWidth <= 768;
+
+    if (!isMobile) {
+        navbar.style.top = "0"; // Always show on desktop
+        return;
+    }
+
+    if (currentScroll > lastScrollTop) {
+        // Scroll down
+        navbar.style.top = "-110px"; // adjust height if needed
+    } else {
+        // Scroll up
+        navbar.style.top = "0";
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+});
+</script>
 </body>
 </html>

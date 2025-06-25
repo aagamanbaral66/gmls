@@ -81,6 +81,13 @@
     /* Responsive font sizing */
     font-size: clamp(24px, 6vw, 40px);
 }
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    transition: top 0.3s ease;
+}
 </style>
 </head>
 <body>
@@ -142,5 +149,29 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 
+<script>
+let lastScrollTop = 0;
+const navbar = document.querySelector('.navbar');
+
+window.addEventListener("scroll", function () {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    const isMobile = window.innerWidth <= 768;
+
+    if (!isMobile) {
+        navbar.style.top = "0"; // Always show on desktop
+        return;
+    }
+
+    if (currentScroll > lastScrollTop) {
+        // Scroll down
+        navbar.style.top = "-110px"; // adjust height if needed
+    } else {
+        // Scroll up
+        navbar.style.top = "0";
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+});
+</script>
 </body>
 </html>
