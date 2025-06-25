@@ -31,7 +31,6 @@
             z-index: 1000;
         }
 
-
         .navigation .nav-link {
             color: #ffffff !important;
             font-weight: 500;
@@ -40,12 +39,15 @@
         }
 
         .navigation .nav-link:hover {
+            color: #e74c3c !important;
+        }
+
+        .navigation .nav-link:hover {
             color: #b5b7bb !important;
         }
         .nav-nav li{
             color: rgb(255, 255, 255);
         }
-
         .navigation .nav-link::after {
             content: '';
             position: absolute;
@@ -214,6 +216,8 @@
             position: relative;
         }
 
+        
+
         .quality-vision-card::before {
             content: '';
             position: absolute;
@@ -326,16 +330,64 @@
         .values-card p {
             color: rgba(255, 255, 255, 0.95);
         }
+        .values-card .col-lg-4 .content-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+            border: 1px solid #f8f9fa;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            color: white;
+        }
 
-        .values-card:nth-child(2) .content-card {
-            background: linear-gradient(135deg, #33ad39 0%, #0c5205 100%);
+        /* Base gradient (visible always) */
+        .values-card .col-lg-4:nth-of-type(1) .content-card {
+            background: linear-gradient(135deg, #33ad39, #0c5205);
         }
-        .values-card:nth-child(2) .content-card:hover {
-            background: linear-gradient(135deg, #f07f7f 0%, #690000 100%);
+        .values-card .col-lg-4:nth-of-type(2) .content-card {
+            background: linear-gradient(135deg, #33ad39, #0c5205);
         }
-                    /* .values-card:nth-child(3) .content-card {
-                        background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
-                    } */
+        .values-card .col-lg-4:nth-of-type(3) .content-card {
+            background: linear-gradient(135deg, #33ad39, #0c5205);
+        }
+
+        /* Hover overlay pseudo-element */
+        .values-card .col-lg-4 .content-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            opacity: 0;
+            transition: opacity 0.45s ease;
+            z-index: 0;
+            border-radius: 15px;
+        }
+
+        /* Hover overlay gradients */
+        .values-card .col-lg-4:nth-of-type(1) .content-card::before {
+            background: linear-gradient(135deg, #255784, #3b546b);
+        }
+        .values-card .col-lg-4:nth-of-type(2) .content-card::before {
+            background: linear-gradient(135deg, #255784, #3b546b);
+        }
+        .values-card .col-lg-4:nth-of-type(3) .content-card::before {
+            background: linear-gradient(135deg, #255784, #3b546b);
+        }
+
+        /* Fade in the overlay */
+        .values-card .col-lg-4 .content-card:hover::before {
+            opacity: 1;
+        }
+
+        /* Ensure content stays above overlay */
+        .values-card .col-lg-4 .content-card > * {
+            position: relative;
+            z-index: 1;
+        }
+
+
 </style>
 </head>
 <body>
@@ -349,7 +401,7 @@
                 </a>
     <div class="container">
         
-        <a class="navbar-brand d-lg-none" href="#">Menu</a>
+        
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
             aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -359,7 +411,7 @@
             <ul class="navbar-nav">
                 <li class="nav-item"  style="color: white;"><a class="nav-link" href="../">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="../products.html">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="../Products.html">Products</a></li>
                 <li class="nav-item"><a class="nav-link" href="../contact.html">Contact</a></li>
             </ul>
               
@@ -371,6 +423,7 @@
         </div>
     </div>
 </nav>
+
 
 <!-- Page Header -->
 <section class="page-header">
@@ -389,13 +442,13 @@
             <div class="col-lg-6 mb-4 mission" style="cursor: pointer;">
                 <div class="content-card mission-vision-card">
                     <h3>Our Mission</h3>
-                    <p style="font-size: large;">Our mission is to provide top-quality products and ensure customer satisfaction through innovation and excellence. We are committed to advancing healthcare in Nepal by delivering cutting-edge medical equipment and comprehensive support services that enable healthcare professionals to provide the best possible care to their patients.</p>
+                    <p style="font-size: large;">Our mission is to provide top-quality Products and ensure customer satisfaction through innovation and excellence. We are committed to advancing healthcare in Nepal by delivering cutting-edge medical equipment and comprehensive support services that enable healthcare professionals to provide the best possible care to their patients.</p>
                 </div>
             </div>
             <div class="col-lg-6 mb-4 quality"style="cursor: pointer;">
                 <div class="content-card quality-vision-card">
                     <h3>Our Quality</h3>
-                    <p style="font-size: large;">We maintain the highest quality standards and continuously improve our processes to meet global expectations. Our commitment to quality extends beyond just products – it encompasses every aspect of our service, from initial consultation to after-sales support, ensuring that our customers receive nothing but the best.</p>
+                    <p style="font-size: large;">We maintain the highest quality standards and continuously improve our processes to meet global expectations. Our commitment to quality extends beyond just Products – it encompasses every aspect of our service, from initial consultation to after-sales support, ensuring that our customers receive nothing but the best.</p>
                 </div>
             </div>
         </div>
@@ -409,11 +462,11 @@
             <div class="col-lg-10">
                 <div class="content-card md-message">
                     <h3>Message from the President, Mrs Sujata Poudel</h3>
-                    <p style="font-size: large;">Global Medilab has been providing quality and leading products and services in the healthcare of the eastern region of Nepal. Since the establishment of the company, it has been selling and distributing products related to In Vitro Diagnostics and healthcare services in Eastern Nepal.</p>
+                    <p style="font-size: large;">Global Medilab has been providing quality and leading Products and services in the healthcare of the eastern region of Nepal. Since the establishment of the company, it has been selling and distributing Products related to In Vitro Diagnostics and healthcare services in Eastern Nepal.</p>
                     
-                    <p style="font-size: large;">Global Medilab has continuously strived to ensure the supply of quality products and services, which has helped us achieve a high level of satisfaction among our valued customers. The company is always keen to ensure that the latest technologies are available to our valued customers. This positive thinking and passion has enabled us and our customers to market cutting-edge products and identify products that use cutting-edge technologies.</p>
+                    <p style="font-size: large;">Global Medilab has continuously strived to ensure the supply of quality Products and services, which has helped us achieve a high level of satisfaction among our valued customers. The company is always keen to ensure that the latest technologies are available to our valued customers. This positive thinking and passion has enabled us and our customers to market cutting-edge Products and identify Products that use cutting-edge technologies.</p>
                     
-                    <p style="font-size: large;">We take great pride in our portfolio of national and international products, which has enabled us to provide excellent services and understand the unique needs of our customers to ensure their satisfaction.</p>
+                    <p style="font-size: large;">We take great pride in our portfolio of national and international Products, which has enabled us to provide excellent services and understand the unique needs of our customers to ensure their satisfaction.</p>
                     
                     <p style="font-size: large;">We thank our valued customers for their continued patronage, our employees for their support and our business partners for their trust in us.</p>
                     
@@ -471,7 +524,7 @@
                 <ul class="list-unstyled">
                     <li><a href="../">Home</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="products.html">Products</a></li>
+                    <li><a href="Products.html">Products</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
