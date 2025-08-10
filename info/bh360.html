@@ -28,35 +28,30 @@ color: #333;
             top: 0;
             z-index: 1000;
         }
-
-        .navigation .nav-link {
-            color: #ffffff !important;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .navigation .nav-link:hover {
-            color: #b5b7bb !important;
-        }
-        .nav-nav li{
-            color: rgb(255, 255, 255);
-        }
-        .navigation .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 50%;
-            background-color: #fcfcfc;
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
-        }
+.navigation .nav-link {
+color: #ffffff !important;
+font-weight: 500;
+transition: all 0.3s ease;
+position: relative;
+}
+.navigation .nav-link:hover {
+color: #ffffff !important;
+}
+.navigation .nav-link::after {
+content: '';
+position: absolute;
+width: 0;
+height: 2px;
+bottom: -5px;
+left: 50%;
+background-color: #ffffff;
+transition: all 0.3s ease;
+transform: translateX(-50%);
+}
 .navigation .nav-link:hover::after {
 width: 80%;
 }
-.breadcrumb-section {
+.breadcrumb-section { 
 background: linear-gradient(135deg, #f8f9fa, #e9ecef);
 padding: 1rem 0;
 border-bottom: 1px solid #dee2e6;
@@ -342,7 +337,6 @@ height: 60px;
 </head>
 <body>
 <!-- Navbar -->
- 
 <nav class="navbar navbar-expand-lg navbar-light navigation">
                 <a href="../"><h1 class="headline-main responsive-heading">
                     Global Medilab & Surgical Pvt. Ltd.
@@ -350,7 +344,7 @@ height: 60px;
                 </a>
     <div class="container">
         
-        <a class="navbar-brand d-lg-none" href="#">Menu</a>
+        
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
             aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -372,6 +366,7 @@ height: 60px;
         </div>
     </div>
 </nav>
+
 
 <!-- Product Hero Section -->
 <section class="product-hero">
