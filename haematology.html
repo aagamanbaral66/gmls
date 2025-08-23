@@ -341,75 +341,54 @@
             transition: top 0.3s ease;
         }
 
-        /* Product Selector Dropdown Styles */
+        /* Product Selector Styles */
         .product-selector {
             background: #f8f9fa;
             padding: 2rem 0;
             border-bottom: 1px solid #dee2e6;
         }
 
-        .product-dropdown-container {
-            max-width: 600px;
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        .product-dropdown-label {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        .product-select {
-            width: 100%;
-            padding: 15px 20px;
-            font-size: 16px;
-            border: 3px solid #e9ecef;
-            border-radius: 12px;
+        .product-card {
             background: white;
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .product-card:hover {
+            border-color: #CE2731;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .product-card.active {
+            border-color: #CE2731;
+            background: #fff5f5;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 120px;
+            object-fit: contain;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-card h6 {
+            margin: 0;
+            font-size: 0.9rem;
             color: #333;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        }
-
-        .product-select:focus {
-            outline: none;
-            border-color: #CE2731;
-            box-shadow: 0 0 0 0.2rem rgba(206, 39, 49, 0.25);
-            transform: translateY(-2px);
-        }
-
-        .product-select:hover {
-            border-color: #CE2731;
-            transform: translateY(-1px);
-        }
-
-        .product-select option {
-            padding: 10px;
-            font-weight: 500;
-        }
-
-        /* Custom dropdown arrow styling */
-        .dropdown-wrapper {
-            position: relative;
-        }
-
-        .dropdown-wrapper::after {
-            content: '▼';
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #CE2731;
-            font-size: 14px;
-            pointer-events: none;
-            transition: all 0.3s ease;
-        }
-
-        .dropdown-wrapper:hover::after {
-            color: #a01e26;
         }
 
         @media (max-width: 768px) {
@@ -434,17 +413,8 @@
                 height: 60px;
             }
 
-            .product-dropdown-container {
-                padding: 0 15px;
-            }
-
-            .product-dropdown-label {
-                font-size: 1.3rem;
-            }
-
-            .product-select {
-                padding: 12px 16px;
-                font-size: 14px;
+            .product-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             }
         }
     </style>
@@ -478,17 +448,12 @@
     </div>
 </nav>
 
-<!-- Product Selector Dropdown -->
+<!-- Product Selector -->
 <section class="product-selector">
     <div class="container">
-        <div class="product-dropdown-container">
-            <div class="product-dropdown-label">Select Product to View</div>
-            <div class="dropdown-wrapper">
-                <select class="product-select" id="productSelect" onchange="selectProduct(this.value)">
-                    <option value="">-- Choose a Product --</option>
-                    <!-- Options will be loaded dynamically -->
-                </select>
-            </div>
+        <h3 class="text-center mb-4">Select Product to View</h3>
+        <div class="product-grid" id="productGrid">
+            <!-- Products will be loaded here -->
         </div>
     </div>
 </section>
@@ -527,7 +492,7 @@
                     <h1 id="productDetailsTitle">Select a Product</h1>
                     <h4 id="productCategory">Product Category</h4>
                     <div class="product-description" id="productDescription">
-                        <p>Please select a product from the dropdown menu above to view details.</p>
+                        <p>Please select a product from the list above to view details.</p>
                     </div>
                     <div class="inquiry-form">
                         <h5>Request Information</h5>
@@ -547,6 +512,7 @@
         </div>
     </div>
 </section>
+
 <!-- Features Section -->
 <section class="features-section">
     <div class="container">
