@@ -1,0 +1,28 @@
+[
+  {
+    "title": "Agappe Mispa Count X",
+    "subtitle": "Automated 3 Part Differential Hematology Analyzer",
+    "description": "Performance ahead of expectations - Agappe Mispa CountX is indigenously built...",
+    "mainImage": "https://www.agappe.com/media/catalog/product/m/i/mispa_count_x_2000x_8_.jpg",
+    "thumbnails": [
+      "../Images/Products/countx1.jpg",
+      "../Images/Products/countx2.jpg",
+      "../Images/Products/countx3.png",
+      "../Images/Products/countx4.png",
+      "../Images/Products/countx5.png"
+    ],
+    "features": [
+      {"icon": "⚡", "title": "High Throughput", "text": "60 samples per hour processing capacity for efficient laboratory workflow"},
+      {"icon": "📊", "title": "22 Parameters", "text": "Comprehensive CBC analysis with 22 parameters and 3 histograms"},
+      {"icon": "🔬", "title": "Smart Technology", "text": "Advanced Smart Impedance Technology for accurate results"}
+    ]
+  },
+  {
+    "title": "Another Product",
+    "subtitle": "...",
+    "description": "...",
+    "mainImage": "...",
+    "thumbnails": [...],
+    "features": [...]
+  }
+]
